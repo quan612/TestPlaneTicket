@@ -1,0 +1,12 @@
+<suite name="Suite">
+  <test name="Test">
+   <classes>
+      <class name="pageTests.FlightResultPageTest">
+      <!--  	<methods>
+      		<include name="Verify_User_Is_Presented_At_Flight_Tab"></include>
+			<include name="Verify_User_Can_Search_For_Flight"></include>
+		</methods> -->
+      </class>
+   </classes>
+  </test>
+</suite>
