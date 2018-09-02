@@ -21,9 +21,8 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 		try
 		{			
 			flightHomePage = new FlightHomePage(driver);
-			flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);
+			flightResultPage = flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);			
 			
-			flightResultPage = new FlightResultPage(driver);
 		//	Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
 		//	Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText(), "Search cheapest fare text is not exist, please recheck");
 		
@@ -43,9 +42,8 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 		try
 		{			
 			flightHomePage = new FlightHomePage(driver);
-			flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);
-			
-			flightResultPage = new FlightResultPage(driver);			
+			flightResultPage = flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);
+				
 			flightResultPage.WaitForFlightResultPageLoad();
 			Assert.assertTrue(flightResultPage.VerifyListOfAirlineBrands(), "List of airline brands does not exist. Pls recheck!");
 			flightResultPage.GetAllAirlineBrandsName();

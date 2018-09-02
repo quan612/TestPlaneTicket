@@ -152,7 +152,9 @@ public class FlightResultPage {
 	public void GetAllAirlineBrandsName()
 	{
 		ClickOnShowMoreLinkToSeeMoreAirlineOptions();
-		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);		
+		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);
+		
+		/* good
 		List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElements(By.tagName("li"));
 		List<String> airLineNames = new ArrayList<String>();
 		
@@ -160,11 +162,13 @@ public class FlightResultPage {
 		airlineBrands.remove(0); //remove the first li because it contains select all text but not the airline brand					
 		
 		for (WebElement liParents : airlineBrands) {	
-			WebElement divParent = liParents.findElement(By.tagName("div"));
-			//WebElement childInput = divParent.findElement(By.tagName("input"));	
+			WebElement divParent = liParents.findElement(By.tagName("div"));			
 			WebElement childLabel = divParent.findElement(By.tagName("label"));	
 			airLineNames.add(childLabel.getText().toString());		
 		}
+		good */
+		///List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElement(By.tagName("li")).findElement(By.tagName("div")).findElements(By.tagName("label"));
+		List<String> airLineNames = leftSideBarAirlineBrandsControl.findElement(By.tagName("li")).findElement(By.tagName("div")).findElements(By.tagName("label")).Select(iw => iw.Text);
 		System.out.println("List of airline name !!!!! ");
 		for (String string : airLineNames) {
 			System.out.println(string);

@@ -58,8 +58,8 @@ public class BaseTestUsingTestNG {
   public void beforeMethod() {
 	  System.out.println("Starting web driver!");
 	  
-	  //System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
-	  System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
+	  System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
+	  //System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
 	  System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 	  //System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");
 	  
@@ -79,8 +79,7 @@ public class BaseTestUsingTestNG {
   /*    System.setProperty("webdriver.chrome.driver", "C:\\Cucumber\\chromedriver.exe");
 		driver = new ChromeDriver();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://google.com");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get("http://google.com");		
 	*/	
   }
 

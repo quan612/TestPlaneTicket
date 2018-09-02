@@ -10,6 +10,7 @@ public class FlightHomePage {
 
 	WebDriver driver;
 	CommonRepository common;
+	FlightResultPage flightResultPage;
 	By toDestinationTxtBox = By.xpath("//div['fields-row clearfix container-home-search-from']/div[2]/div[2]/input[1]");
 	By departTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[1]/div[2]");
 	By returnTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[2]/div[2]");
@@ -36,10 +37,10 @@ public class FlightHomePage {
 		driver.findElement(returnTextBox).click();
 	}
 
-	private void SearchFlightAndGoToFlightFilterPage()
+	private void SearchFlightAndGoToFlightResultPage()
 	{
 		driver.findElement(btnSearchFlight).click();	
-		System.out.println("Click on Search flight button!!!");
+		System.out.println("Click on Search flight button!!!");		
 	}		
 
 	private void EnterFlightDestination(String destination) 
@@ -51,14 +52,15 @@ public class FlightHomePage {
 	}
 
 	/* ** Public methods  ** */
-	public void UserSearchForFlight(String destination, String departDate, String returnDate)
+	public FlightResultPage UserSearchForFlight(String destination, String departDate, String returnDate)
 	{		
 		EnterFlightDestination(destination);	
 		ClickOnDepartTextBox();		
 		common.SelectADayInDatePicker(departDate, driver);		
 		ClickOnReturnTextBox();		
 		common.SelectADayInDatePicker(returnDate, driver);	 		
-		SearchFlightAndGoToFlightFilterPage();	 
+		SearchFlightAndGoToFlightResultPage();	 
+		return new FlightResultPage(driver);
 	}
 
 	/* ** Test methods  ** */
