@@ -167,8 +167,8 @@ public class FlightResultPage {
 			airLineNames.add(childLabel.getText().toString());		
 		}
 		good */
-		
-		List<String> airLineNames = leftSideBarAirlineBrandsControl.findElements(By.tagName("li").findElement(By.tagName("div").findElement(By.tagName("label"));
+		///List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElement(By.tagName("li")).findElement(By.tagName("div")).findElements(By.tagName("label"));
+		List<String> airLineNames = leftSideBarAirlineBrandsControl.findElement(By.tagName("li")).findElement(By.tagName("div")).findElements(By.tagName("label")).Select(iw => iw.Text);
 		System.out.println("List of airline name !!!!! ");
 		for (String string : airLineNames) {
 			System.out.println(string);
