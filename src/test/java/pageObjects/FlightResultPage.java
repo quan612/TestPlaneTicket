@@ -3,6 +3,8 @@ package pageObjects;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,7 +28,7 @@ public class FlightResultPage {
 
 	// flight result page left side bar
 	By leftSideBarContent = By.id("sidebar-content");
-	By leftSideBarShowMoreLink = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/div");
+	By leftSideBarShowMoreLink = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/div/a/span");
 	By leftSideBarSelectAllCheckBox = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/ul/li[1]/input");
 	By leftSideBarAllAirlineBrands = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/ul");
 
@@ -96,16 +98,23 @@ public class FlightResultPage {
 		try 
 		{
 			System.out.println("Wait show more link");
-			common.ExplicitWaitForElement(leftSideBarShowMoreLink);
+			//common.ExplicitWaitForElement(leftSideBarShowMoreLink);
+			//new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(leftSideBarShowMoreLink));
 			WebElement leftSideBarShowMoreControl = driver.findElement(leftSideBarShowMoreLink);
 			if(leftSideBarShowMoreControl.isDisplayed())				
 				leftSideBarShowMoreControl.click();
 			else
-				new Exception("Cannot click on show more link tag");
+				//new Exception("Cannot click on show more link tag");
+				System.out.println("No show more link ");
 		} 
+		catch (NoSuchElementException e) {
+			System.out.println("No show more link " + e);
+			
+		}
 		catch (Exception e) {
 			System.out.println("Exception is " + e);
 		}
+		
 	}
 
 	public void ClickOnSelectAllAirlinesCheckBox() //ok
@@ -151,26 +160,26 @@ public class FlightResultPage {
 	
 	public void GetAllAirlineBrandsName()
 	{
-		ClickOnShowMoreLinkToSeeMoreAirlineOptions();
-		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);
-		
 		/* good
-		List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElements(By.tagName("li"));
-		List<String> airLineNames = new ArrayList<String>();
-		
-		System.out.println("There are " + (airlineBrands.size()-1) + " airline in the list!");
-		airlineBrands.remove(0); //remove the first li because it contains select all text but not the airline brand					
-		
+		List<String> airLineNames = new ArrayList<String>();		
+		airlineBrands.remove(0); //remove the first li because it contains select all text but not the airline brand		
 		for (WebElement liParents : airlineBrands) {	
 			WebElement divParent = liParents.findElement(By.tagName("div"));			
 			WebElement childLabel = divParent.findElement(By.tagName("label"));	
 			airLineNames.add(childLabel.getText().toString());		
 		}
 		good */
-		///List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElement(By.tagName("li")).findElement(By.tagName("div")).findElements(By.tagName("label"));
-		List<String> airLineNames = leftSideBarAirlineBrandsControl.findElement(By.tagName("li")).findElement(By.tagName("div")).findElements(By.tagName("label")).Select(iw => iw.Text);
+		
+		
+		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);		
+		List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElements(By.tagName("li"));
+		airlineBrands.remove(0); 
+		
+		List<String> airLineNames = new ArrayList<String>();
+		airlineBrands.forEach(item -> airLineNames.add(item.findElement(By.tagName("div")).findElement(By.tagName("label")).getText())); //.stream().map(x -> x.getText()));   //.findElement(By.tagName("label")).stream().map(x -> x.getText()).collect(Collectors.toList());
 		System.out.println("List of airline name !!!!! ");
-		for (String string : airLineNames) {
+		for (String string : airLineNames) 
+		{
 			System.out.println(string);
 		}
 	}
@@ -291,14 +300,14 @@ public class FlightResultPage {
 			return false;
 		}
 	}
-	public boolean VerifyListOfAirlineBrands()
+	public boolean VerifyListOfAirlineBrandsExist()
 	{
 		common.ExplicitWaitForElement(leftSideBarAllAirlineBrands);
 		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);
 		if(leftSideBarAirlineBrandsControl.isDisplayed()
 				&& leftSideBarAirlineBrandsControl.findElements(By.tagName("li")).size() > 0 )
 		{
-			System.out.println("List of airline brands exists!" );
+			System.out.println("List of airline brands exists! " + leftSideBarAirlineBrandsControl.findElements(By.tagName("li")).size() + " airlines. " );
 			return true;
 		}
 		else
