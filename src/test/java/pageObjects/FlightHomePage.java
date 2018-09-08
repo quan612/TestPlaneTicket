@@ -1,5 +1,7 @@
 package pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +17,8 @@ public class FlightHomePage {
 	By departTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[1]/div[2]");
 	By returnTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[2]/div[2]");
 	By btnSearchFlight = By.id("btn-search-flight");
-
+	By businessComboBox = By.id("class_select");
+	
 	//tab
 	By ulTab = By.cssSelector("ul[class='hp-form-tabs clearfix']");
 
@@ -87,5 +90,36 @@ public class FlightHomePage {
 		}		
 		else
 			return false;
+	}
+	public boolean VerifyBusinessClassComboBox()
+	{
+		try
+		{
+			boolean result = false;
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessComboBox));	
+			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));
+			
+			driver.findElement(businessComboBox).click();
+			List<WebElement> items = driver.findElement(businessComboBox)
+					.findElement(By.id("home-class-dropdown"))
+					.findElement(By.tagName("ul"))
+					.findElements(By.tagName("li"));
+			System.out.println("User is at flight home page!!!");
+			
+			if(items.get(0).getText().equals("Economy/Coach"))
+				result = true;
+			else
+				result = false;
+			
+			return result;
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+	}
+	public boolean VerifyBsinessClassComboBoxItemIsClickAble()
+	{
+		return true;
 	}
 }

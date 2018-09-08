@@ -58,8 +58,8 @@ public class BaseTestUsingTestNG {
   public void beforeMethod() {
 	  System.out.println("Starting web driver!");
 	  
-	  //System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
-	  System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
+	  System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
+	  //System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
 	  System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 	  //System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");
 	  
@@ -88,8 +88,8 @@ public class BaseTestUsingTestNG {
   {
 	  // Close the driver
 	  System.out.println("closing driver ");
-	  //driver.close();
-     driver.quit();
+	  driver.close();
+    // driver.quit();
   }
 
 }

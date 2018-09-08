@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69854" started-at="2018-09-04T00:38:18Z" finished-at="2018-09-04T00:39:28Z">
+  <suite name="Default suite" duration-ms="7954" started-at="2018-09-07T19:05:19Z" finished-at="2018-09-07T19:05:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69854" started-at="2018-09-04T00:38:18Z" finished-at="2018-09-04T00:39:28Z">
-      <class name="pageTests.FlightResultPageTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:pageTests.FlightResultPageTest@5c3bd550]" name="beforeMethod" is-config="true" duration-ms="30719" started-at="2018-09-04T00:38:18Z" finished-at="2018-09-04T00:38:49Z">
+    <test name="Default test" duration-ms="7954" started-at="2018-09-07T19:05:19Z" finished-at="2018-09-07T19:05:27Z">
+      <class name="pageTests.FlightHomePageTest">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:pageTests.FlightHomePageTest@6a4f787b]" name="beforeMethod" is-config="true" duration-ms="7045" started-at="2018-09-07T19:05:19Z" finished-at="2018-09-07T19:05:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select()[pri:0, instance:pageTests.FlightResultPageTest@5c3bd550]" name="Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select" duration-ms="37655" started-at="2018-09-04T00:38:49Z" finished-at="2018-09-04T00:39:26Z">
+        <test-method status="PASS" signature="Verify_User_Can_Select_Different_Business_Class()[pri:0, instance:pageTests.FlightHomePageTest@6a4f787b]" name="Verify_User_Can_Select_Different_Business_Class" duration-ms="359" started-at="2018-09-07T19:05:26Z" finished-at="2018-09-07T19:05:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:pageTests.FlightResultPageTest@5c3bd550]" name="afterMethod" is-config="true" duration-ms="1454" started-at="2018-09-04T00:39:26Z" finished-at="2018-09-04T00:39:28Z">
+        </test-method> <!-- Verify_User_Can_Select_Different_Business_Class -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:pageTests.FlightHomePageTest@6a4f787b]" name="afterMethod" is-config="true" duration-ms="531" started-at="2018-09-07T19:05:26Z" finished-at="2018-09-07T19:05:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- pageTests.FlightResultPageTest -->
+      </class> <!-- pageTests.FlightHomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

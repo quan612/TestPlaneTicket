@@ -69,7 +69,7 @@ public class FlightResultPage {
 		}
 	}
 
-	public void GetFirstPriceInFlightResultDetail() throws InterruptedException //no
+	public void GetFirstPriceInFlightResultDetail() //no
 	{
 		//WebElement divFarePackageList = driver.findElement(flightSearchResult);
 		//System.out.println("test valid " + divFarePackageList.isDisplayed());

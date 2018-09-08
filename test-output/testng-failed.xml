@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pageTests.FlightResultPageTest">
+      <class name="pageTests.FlightHomePageTest">
         <methods>
-          <include name="Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select"/>
+          <include name="Verify_User_Can_Select_Different_Business_Class"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- pageTests.FlightResultPageTest -->
+      </class> <!-- pageTests.FlightHomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
