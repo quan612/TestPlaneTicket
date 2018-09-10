@@ -31,17 +31,11 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 	//@Test 123456
 	public void Verify_Page_Title_And_User_Is_Presented_At_Flight_Tab_In_Flight_Home_Page() 
 	{
-		try
-		{			
+		
 			flightHomePage = new FlightHomePage(driver);
 			Assert.assertTrue(flightHomePage.VerifyFlightHomePageTitle(), "Page title is not correct, please recheck!!!");
 			Assert.assertTrue(flightHomePage.VerifyUserIsPresentFlightTab(), "User is not present with flight tab, please recheck!!!");
-		}
-		catch(Exception e)
-		{
-			System.out.println("This test1 is fail!!! " + e);
-			Assert.fail("This test1 is fail!!! " + e);
-		}
+		
 	}
 	
 	//@Test
@@ -77,6 +71,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 	public void Verify_User_Can_Select_Different_Business_Class() 
 	{
 			flightHomePage = new FlightHomePage(driver);	
+			flightHomePage.UserClickOnFlightClassComboBox();
 			Assert.assertTrue(flightHomePage.VerifyBusinessClassComboBox());
 					
 	}

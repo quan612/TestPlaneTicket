@@ -65,6 +65,10 @@ public class FlightHomePage {
 		SearchFlightAndGoToFlightResultPage();	 
 		return new FlightResultPage(driver);
 	}
+	public void UserClickOnFlightClassComboBox()
+	{
+		driver.findElement(businessComboBox).click();
+	}
 
 	/* ** Test methods  ** */
 	public boolean VerifyUserIsPresentFlightTab()
@@ -99,14 +103,18 @@ public class FlightHomePage {
 			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessComboBox));	
 			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));
 			
-			driver.findElement(businessComboBox).click();
+			
 			List<WebElement> items = driver.findElement(businessComboBox)
 					.findElement(By.id("home-class-dropdown"))
 					.findElement(By.tagName("ul"))
 					.findElements(By.tagName("li"));
-			System.out.println("User is at flight home page!!!");
 			
-			if(items.get(0).getText().equals("Economy/Coach"))
+			
+			if(items.get(0).getText().equals("Economy/Coach")
+				&& items.get(1).getText().equals("Premium Economy")
+				&& items.get(2).getText().equals("Business")
+			//	&& items.get(3).getText().equals("First")
+					)
 				result = true;
 			else
 				result = false;

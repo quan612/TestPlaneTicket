@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7954" started-at="2018-09-07T19:05:19Z" finished-at="2018-09-07T19:05:27Z">
+  <suite name="Default suite" duration-ms="72724" started-at="2018-09-10T01:00:27Z" finished-at="2018-09-10T01:01:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7954" started-at="2018-09-07T19:05:19Z" finished-at="2018-09-07T19:05:27Z">
+    <test name="Default test" duration-ms="72724" started-at="2018-09-10T01:00:27Z" finished-at="2018-09-10T01:01:40Z">
       <class name="pageTests.FlightHomePageTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:pageTests.FlightHomePageTest@6a4f787b]" name="beforeMethod" is-config="true" duration-ms="7045" started-at="2018-09-07T19:05:19Z" finished-at="2018-09-07T19:05:26Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:pageTests.FlightHomePageTest@5c3bd550]" name="beforeMethod" is-config="true" duration-ms="66688" started-at="2018-09-10T01:00:27Z" finished-at="2018-09-10T01:01:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Verify_User_Can_Select_Different_Business_Class()[pri:0, instance:pageTests.FlightHomePageTest@6a4f787b]" name="Verify_User_Can_Select_Different_Business_Class" duration-ms="359" started-at="2018-09-07T19:05:26Z" finished-at="2018-09-07T19:05:26Z">
+        <test-method status="PASS" signature="Verify_User_Can_Select_Different_Business_Class()[pri:0, instance:pageTests.FlightHomePageTest@5c3bd550]" name="Verify_User_Can_Select_Different_Business_Class" duration-ms="1331" started-at="2018-09-10T01:01:34Z" finished-at="2018-09-10T01:01:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_User_Can_Select_Different_Business_Class -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:pageTests.FlightHomePageTest@6a4f787b]" name="afterMethod" is-config="true" duration-ms="531" started-at="2018-09-07T19:05:26Z" finished-at="2018-09-07T19:05:27Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:pageTests.FlightHomePageTest@5c3bd550]" name="afterMethod" is-config="true" duration-ms="4681" started-at="2018-09-10T01:01:35Z" finished-at="2018-09-10T01:01:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
