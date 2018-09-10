@@ -28,7 +28,7 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 			//flightResultPage.WaitForFlightResultPageLoad();			
 	}
 	
-	//@Test
+	@Test
 	public void Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select()
 	{
 					
