@@ -1,6 +1,9 @@
 language: java
 
 addons:
+apt:
+    packages:
+      - google-chrome-stable
 #  firefox: latest
   chrome: stable
   
