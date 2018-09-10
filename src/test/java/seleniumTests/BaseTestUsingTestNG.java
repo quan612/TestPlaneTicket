@@ -3,9 +3,9 @@ package seleniumTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -69,7 +69,13 @@ public class BaseTestUsingTestNG {
 	 // FirefoxOptions options = new FirefoxOptions().addPreference("browser.link.open_newwindow", 1);  
 	  //options.setHeadless(true);
 	  //driver = new FirefoxDriver(options);
-      driver = new ChromeDriver();
+	 
+	 
+	 ChromeOptions options = new ChromeOptions();
+     
+     options.addArguments("--no-sandbox");
+     options.addArguments("--disable-dev-shm-usage");
+      driver = new ChromeDriver(options);
       //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
 
       //driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
