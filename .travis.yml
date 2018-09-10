@@ -1,11 +1,8 @@
 language: java
 
 addons:
-apt:
-    packages:
-      - google-chrome-stable
 #  firefox: latest
-#  chrome: stable
+  chrome: stable
   
 env:
   global:
@@ -25,6 +22,8 @@ env:
     - CHROME_NO_SANDBOX=true
 
 before_install:
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
   - mkdir geckodriver
   - tar -xzf geckodriver-v0.11.1-linux64.tar.gz -C geckodriver
