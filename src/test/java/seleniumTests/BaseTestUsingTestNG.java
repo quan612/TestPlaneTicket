@@ -58,18 +58,18 @@ public class BaseTestUsingTestNG {
   public void beforeMethod() {
 	  System.out.println("Starting web driver!");
 	  
-	  //System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
-	  System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
+	  System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
+	 // System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 	  //System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
 	  //System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 	  //System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");
 	  
-	  //System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
 	 
-	  FirefoxOptions options = new FirefoxOptions().addPreference("browser.link.open_newwindow", 1);  
+	 // FirefoxOptions options = new FirefoxOptions().addPreference("browser.link.open_newwindow", 1);  
 	  //options.setHeadless(true);
-	  driver = new FirefoxDriver(options);
-      //driver = new ChromeDriver();
+	  //driver = new FirefoxDriver(options);
+      driver = new ChromeDriver();
       //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
 
       //driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
