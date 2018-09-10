@@ -66,7 +66,7 @@ public class BaseTestUsingTestNG {
 	  //System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
 	 
 	  FirefoxOptions options = new FirefoxOptions().addPreference("browser.link.open_newwindow", 1);  
-	  options.setHeadless(true);
+	  //options.setHeadless(true);
 	  driver = new FirefoxDriver(options);
       //driver = new ChromeDriver();
       //Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
