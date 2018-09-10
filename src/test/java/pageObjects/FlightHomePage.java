@@ -113,9 +113,11 @@ public class FlightHomePage {
 			if(items.get(0).getText().equals("Economy/Coach")
 				&& items.get(1).getText().equals("Premium Economy")
 				&& items.get(2).getText().equals("Business")
-			//	&& items.get(3).getText().equals("First")
-					)
-				result = true;
+				&& items.get(3).getText().equals("First"))
+				{
+					System.out.println("Business class combo box test pass!");
+					result = true;				
+				}
 			else
 				result = false;
 			
