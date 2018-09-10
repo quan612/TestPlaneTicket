@@ -8,4 +8,5 @@ before_install:
   - export PATH=$PATH:$PWD/geckodriver
   - echo $PATH
   - ls /home/travis/build/quan612/TestPlaneTicket/geckodriver
-#  - sudo apt-get install -y dbus-x11
+  - sudo apt-get -qq update
+  - sudo apt-get install -y dbus-x11

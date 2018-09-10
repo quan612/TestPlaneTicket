@@ -89,8 +89,8 @@ public class BaseTestUsingTestNG {
   {
 	  // Close the driver
 	  System.out.println("closing driver ");
-	  driver.close();
-    // driver.quit();
+	  //driver.close();
+    driver.quit();
   }
 
 }
