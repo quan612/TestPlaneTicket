@@ -41,7 +41,7 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 			flightResultPage.GetAllAirlineBrandsName();	
 	}
 	
-	@Test
+	//@Test
 	public void Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand()
 	{
 					
