@@ -2,7 +2,7 @@ language: java
 
 addons:
 #  firefox: latest
-  chrome: latest
+  chrome: stable
   
 env:
   global:
@@ -20,7 +20,7 @@ env:
     # Required to turn on workaround for the following issue:
     # https://github.com/travis-ci/travis-ci/issues/8836
     - CHROME_NO_SANDBOX=true
-	
+
 before_install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
   - mkdir geckodriver
