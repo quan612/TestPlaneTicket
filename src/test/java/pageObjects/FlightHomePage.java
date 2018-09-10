@@ -115,7 +115,7 @@ public class FlightHomePage {
 				&& items.get(2).getText().equals("Business")
 				&& items.get(3).getText().equals("First"))
 				{
-					System.out.println("Business class combo box test pass!");
+					System.out.println("Business class combo box test pass!!!");
 					result = true;				
 				}
 			else

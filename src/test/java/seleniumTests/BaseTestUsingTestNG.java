@@ -61,32 +61,25 @@ public class BaseTestUsingTestNG {
 		//System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
 		System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 		//System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
-		//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
-		//System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");
-
-		//System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
 		
-		// FirefoxOptions options = new FirefoxOptions().addPreference("browser.link.open_newwindow", 1);  
-		//options.setHeadless(true);
-		//driver = new FirefoxDriver(options);
 
-		System.setProperty("webdriver.chrome.driver","chromedriver");
+		//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+		//System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");		
+		FirefoxOptions options = new FirefoxOptions();
+		options.addPreference("browser.link.open_newwindow", 1); 
+		options.setHeadless(true);
+		driver = new FirefoxDriver(options);
+
+	/*	
+	 * 	System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
+	 	System.setProperty("webdriver.chrome.driver","chromedriver");
 		ChromeOptions options = new ChromeOptions();     
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		driver = new ChromeDriver(options);
-		//Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
-
-		//driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-		driver.get("https://www.flighthub.com/");
-
-		// test
-
-		/*    System.setProperty("webdriver.chrome.driver", "C:\\Cucumber\\chromedriver.exe");
-		driver = new ChromeDriver();
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://google.com");		
-		 */	
+		*/
+		
+		driver.get("https://www.flighthub.com/");	
 	}
 
 	@AfterMethod
