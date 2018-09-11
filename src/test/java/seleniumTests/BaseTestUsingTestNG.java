@@ -58,26 +58,28 @@ public class BaseTestUsingTestNG {
 	public void beforeMethod() {
 		System.out.println("Starting web driver!");
 
-		//System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
-		System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
+		System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");
+		//System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 		//System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");
 		
-
+		/*
 		//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 		//System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");		
 		FirefoxOptions options = new FirefoxOptions();
 		options.addPreference("browser.link.open_newwindow", 1); 
 		options.setHeadless(true);
 		driver = new FirefoxDriver(options);
+		*/
 
-	/*	
-	 * 	System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
-	 	System.setProperty("webdriver.chrome.driver","chromedriver");
-		ChromeOptions options = new ChromeOptions();     
+//	/*	
+	  	System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
+	 	//System.setProperty("webdriver.chrome.driver","chromedriver");
+		ChromeOptions options = new ChromeOptions();  
+		//options.addArguments("--headless");
 		options.addArguments("--no-sandbox");
 		options.addArguments("--disable-dev-shm-usage");
 		driver = new ChromeDriver(options);
-		*/
+	//	*/
 		
 		driver.get("https://www.flighthub.com/");	
 	}

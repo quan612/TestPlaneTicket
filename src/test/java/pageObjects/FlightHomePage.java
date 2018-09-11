@@ -13,11 +13,14 @@ public class FlightHomePage {
 	WebDriver driver;
 	CommonRepository common;
 	FlightResultPage flightResultPage;
+	
 	By toDestinationTxtBox = By.xpath("//div['fields-row clearfix container-home-search-from']/div[2]/div[2]/input[1]");
 	By departTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[1]/div[2]");
 	By returnTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[2]/div[2]");
 	By btnSearchFlight = By.id("btn-search-flight");
 	By businessComboBox = By.id("class_select");
+	By passengerComboBox = By.id("passenger-select-container");
+	By passengerContainer = By.id("home-passengers-container");
 	
 	//tab
 	By ulTab = By.cssSelector("ul[class='hp-form-tabs clearfix']");
@@ -65,11 +68,17 @@ public class FlightHomePage {
 		SearchFlightAndGoToFlightResultPage();	 
 		return new FlightResultPage(driver);
 	}
+	
 	public void UserClickOnFlightClassComboBox()
 	{
 		driver.findElement(businessComboBox).click();
 	}
 
+	public void UserClickOnPassengerComboBox()
+	{
+		driver.findElement(passengerComboBox).click();
+	}
+	
 	/* ** Test methods  ** */
 	public boolean VerifyUserIsPresentFlightTab()
 	{
@@ -128,8 +137,27 @@ public class FlightHomePage {
 			return false;
 		}
 	}
-	public boolean VerifyBsinessClassComboBoxItemIsClickAble()
+	public boolean VerifyPassengerComboBox()
 	{
-		return true;
+		try
+		{
+			boolean result = false;
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(passengerComboBox));	
+			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(passengerComboBox));
+			
+			
+			List<WebElement> items = driver.findElement(passengerContainer)
+					.findElements(By.xpath(".//*['@class=hp-select-pax-wrap clearfix']/div[2]/span"));
+			//		.findElements(By.tagName("span"));
+					
+			System.out.println("test  " + items.size());		
+			
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception " + e);
+			return false;
+		}
 	}
 }
