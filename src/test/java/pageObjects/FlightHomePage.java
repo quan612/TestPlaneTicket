@@ -71,11 +71,15 @@ public class FlightHomePage {
 	
 	public void UserClickOnFlightClassComboBox()
 	{
+		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessComboBox));	
+		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));
 		driver.findElement(businessComboBox).click();
 	}
 
 	public void UserClickOnPassengerComboBox()
 	{
+		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(passengerComboBox));	
+		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(passengerComboBox));
 		driver.findElement(passengerComboBox).click();
 	}
 	
@@ -108,10 +112,7 @@ public class FlightHomePage {
 	{
 		try
 		{
-			boolean result = false;
-			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessComboBox));	
-			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));
-			
+			boolean result = false;		
 			
 			List<WebElement> items = driver.findElement(businessComboBox)
 					.findElement(By.id("home-class-dropdown"))
@@ -141,17 +142,25 @@ public class FlightHomePage {
 	{
 		try
 		{
-			boolean result = false;
-			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(passengerComboBox));	
-			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(passengerComboBox));
 			
 			
-			List<WebElement> items = driver.findElement(passengerContainer)
-					.findElements(By.xpath(".//*['@class=hp-select-pax-wrap clearfix']/div[2]/span"));
-			//		.findElements(By.tagName("span"));
+			System.out.println("Passenger combobox items: ");
+			List<WebElement> span = driver.findElement(passengerContainer)
+					.findElements(By.xpath(".//*['@class=hp-select-pax-wrap clearfix']/div[2]/span")); // to get all the span inside passenger container
+			
+			
+			for (WebElement webElement : span) {
+				try 
+				{
+					System.out.print(webElement.getText() +  " ");
+					System.out.println(webElement.findElement(By.tagName("span")).getText());
 					
-			System.out.println("test  " + items.size());		
-			
+				}
+				catch(NoSuchElementException e)
+				{
+					System.out.println(" ");
+				}					
+			}			
 			return true;
 		}
 		catch(Exception e)
