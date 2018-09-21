@@ -1,9 +1,11 @@
 # TestPlaneTicket  [![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
-A Simple Selenium project written in Java to demonstrate how I build the test automation in my work place. 
+A Simple Selenium project written in Java to demonstrate how I build the test automation in my workplace. 
 
 ## Getting Started
 The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes. 
+
 The structure can be built using Maven, and follows page object framework.
+
 Page objects classes contain elements, methods, actions, behaviors for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
 
 
@@ -22,6 +24,7 @@ Page objects classes contain elements, methods, actions, behaviors for a page. T
     ├── src/test/resources                # Feature file, for Cucumber
     └── ...
 ```
+
 ## Built With
 
 * [Selenium 3](https://www.seleniumhq.org/) - The testing framework
