@@ -1,17 +1,10 @@
 package pageObjects;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//import org.testng.Assert;
-
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

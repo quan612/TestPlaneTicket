@@ -20,7 +20,12 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 	{
 				
 			flightHomePage = new FlightHomePage(driver);
-			flightResultPage = flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);			
+			
+			flightHomePage.UserEnterFlightDestination(strDestination);
+			flightHomePage.UserPickDepartDate(strDepartDate);
+			flightHomePage.UserPickReturnDate(strReturnDate);		
+			flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();
+			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();			
 			
 			Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist());
 			Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText());		
@@ -33,7 +38,11 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 	{
 					
 			flightHomePage = new FlightHomePage(driver);
-			flightResultPage = flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);
+			flightHomePage.UserEnterFlightDestination(strDestination);
+			flightHomePage.UserPickDepartDate(strDepartDate);
+			flightHomePage.UserPickReturnDate(strReturnDate);		
+			flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();
+			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 				
 			flightResultPage.WaitForFlightResultPageLoad();
 			flightResultPage.ClickOnShowMoreLinkToSeeMoreAirlineOptions();
@@ -46,7 +55,11 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 	{
 					
 			flightHomePage = new FlightHomePage(driver);
-			flightResultPage = flightHomePage.UserSearchForFlight(strDestination, strDepartDate, strReturnDate);
+			flightHomePage.UserEnterFlightDestination(strDestination);
+			flightHomePage.UserPickDepartDate(strDepartDate);
+			flightHomePage.UserPickReturnDate(strReturnDate);		
+			flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();
+			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 				
 			flightResultPage.WaitForFlightResultPageLoad();
 			flightResultPage.ClickOnShowMoreLinkToSeeMoreAirlineOptions();

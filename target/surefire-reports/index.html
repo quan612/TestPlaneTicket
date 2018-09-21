@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>J:\Automation 2018\FlightTest-master\TestPlaneTicket\testng.xml</span>
+                    <span>H:\EclipseWorkspace\TestPlaneTicket\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,22 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="pageTests.FlightHomePageTest" hash-for-method="Test1">Test1</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="pageTests.FlightHomePageTest" hash-for-method="Verify_User_Can_Search_For_Flight">Verify_User_Can_Search_For_Flight</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="pageTests.FlightHomePageTest" hash-for-method="Verify_User_Can_Select_Different_Business_Class">Verify_User_Can_Select_Different_Business_Class</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="pageTests.FlightHomePageTest" hash-for-method="Verify_User_Can_Select_Different_Passenger_Type">Verify_User_Can_Select_Different_Passenger_Type</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="pageTests.FlightHomePageTest" hash-for-method="Verify_User_Is_Present_With_Validation_Errors">Verify_User_Is_Present_With_Validation_Errors</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,9 +140,38 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Test1">
-                  </a> <!-- Test1 -->
-                  <span class="method-name">Test1</span>
+                  <a name="Verify_User_Can_Search_For_Flight">
+                  </a> <!-- Verify_User_Can_Search_For_Flight -->
+                  <span class="method-name">Verify_User_Can_Search_For_Flight</span>
+                  <em>
+(User can search for flight after entering destination, depart date, return date)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Verify_User_Can_Select_Different_Business_Class">
+                  </a> <!-- Verify_User_Can_Select_Different_Business_Class -->
+                  <span class="method-name">Verify_User_Can_Select_Different_Business_Class</span>
+                  <em>
+(User can select different business class before searching for flight)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Verify_User_Can_Select_Different_Passenger_Type">
+                  </a> <!-- Verify_User_Can_Select_Different_Passenger_Type -->
+                  <span class="method-name">Verify_User_Can_Select_Different_Passenger_Type</span>
+                  <em>
+(User can see passenger type before searching for flight)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Verify_User_Is_Present_With_Validation_Errors">
+                  </a> <!-- Verify_User_Is_Present_With_Validation_Errors -->
+                  <span class="method-name">Verify_User_Is_Present_With_Validation_Errors</span>
+                  <em>
+(User will see validation error when clicking on search flight button)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,18 +179,22 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">J:\Automation 2018\FlightTest-master\TestPlaneTicket\testng.xml</span>
+            <span class="header-content">H:\EclipseWorkspace\TestPlaneTicket\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Test&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Suite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;utils.Listeners.TestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Firefox Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;pageTests.FlightHomePageTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Firefox Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,7 +206,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Firefox Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +232,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Test1')
+data.setCell(0, 1, 'Verify_User_Can_Search_For_Flight')
 data.setCell(0, 2, 'pageTests.FlightHomePageTest')
-data.setCell(0, 3, 98);
+data.setCell(0, 3, 6813);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Verify_User_Can_Select_Different_Business_Class')
+data.setCell(1, 2, 'pageTests.FlightHomePageTest')
+data.setCell(1, 3, 399);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Verify_User_Can_Select_Different_Passenger_Type')
+data.setCell(2, 2, 'pageTests.FlightHomePageTest')
+data.setCell(2, 3, 384);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'Verify_User_Is_Present_With_Validation_Errors')
+data.setCell(3, 2, 'pageTests.FlightHomePageTest')
+data.setCell(3, 3, 321);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 98 ms</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -220,20 +280,62 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">pageTests.FlightHomePageTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">beforeMethod</span>
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeClass(firefox)</span>
+                <span class="method-start">19 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">Test1</span>
-                <span class="method-start">312894 ms</span>
+                <span class="method-name">Verify_User_Can_Search_For_Flight</span>
+                <span class="method-start">5582 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">afterMethod</span>
-                <span class="method-start">312993 ms</span>
+                <span class="method-name">afterClass</span>
+                <span class="method-start">12405 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeClass(firefox)</span>
+                <span class="method-start">13135 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Verify_User_Can_Select_Different_Business_Class</span>
+                <span class="method-start">20609 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">21009 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeClass(firefox)</span>
+                <span class="method-start">23732 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Verify_User_Can_Select_Different_Passenger_Type</span>
+                <span class="method-start">28651 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">29036 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeClass(firefox)</span>
+                <span class="method-start">29690 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Verify_User_Is_Present_With_Validation_Errors</span>
+                <span class="method-start">36246 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterClass</span>
+                <span class="method-start">36567 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">37340 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
