@@ -32,9 +32,11 @@ The project follows page object framework design pattern. Page objects classes c
 * [ClueCumber 1.4](https://github.com/trivago/cluecumber-report-plugin/) - Generate Cucumber report based on Cucumber json result
 * [Extent Report 3.1.5](http://extentreports.com/) - Logger
 
-## References
+## Acknowledgments
 The project follows guidelines from following:
 
 *ClueCumberReport https://github.com/trivago/cluecumber-report-plugin
 
 *Extent Report v3 configuration https://github.com/swtestacademy/extent-reports-version-3-example
+
+*Many other blog posts
