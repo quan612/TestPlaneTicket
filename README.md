@@ -8,7 +8,7 @@ Page objects classes contain elements, methods, actions, behaviors for a page. T
 
 
 ## Project structure
- .
+ ```bash
     ├── ...
     ├── src/test/java                     # Test files (alternatively `spec` or `tests`)
     │   ├── cucumber.StepDefinitions          # Step definitions for cucumber feature file
@@ -21,7 +21,7 @@ Page objects classes contain elements, methods, actions, behaviors for a page. T
     │   └── utils.Listeners                   # Event listener for Extent Report
     ├── src/test/resources                # Feature file, for Cucumber
     └── ...
-
+```
 ## Built With
 
 * [Selenium 3](https://www.seleniumhq.org/) - The testing framework
