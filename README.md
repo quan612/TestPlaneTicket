@@ -4,9 +4,7 @@ A Simple Selenium project written in Java to demonstrate how I build the test au
 ## Getting Started
 The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes. 
 
-The structure can be built using Maven, and follows page object framework.
-
-Page objects classes contain elements, methods, actions, behaviors for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
+The project follows page object framework design pattern. Page objects classes contain elements, methods, actions, behaviors for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
 
 
 ## Project structure
