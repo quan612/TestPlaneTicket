@@ -1,7 +1,26 @@
-# TestPlaneTicket
-A Simple Selenium project written in Java.
-[![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
+# TestPlaneTicket  [![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
+A Simple Selenium project written in Java to demonstrate how I build the test automation in my work place. 
 
+## Getting Started
+The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes. 
+The structure can be built using Maven, and follows page object framework.
+Page objects classes contain elements, methods, actions, behaviors for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
+
+
+## Project structure
+ .
+    ├── ...
+    ├── src/test/java                     # Test files (alternatively `spec` or `tests`)
+    │   ├── cucumber.StepDefinitions          # Step definitions for cucumber feature file
+    │   ├── cucumber.TestRunner               # Define cucumber options, features, tags and matching glue steps
+    │   ├── cucumber.Hooks                    # Hooks for Cucumber set up
+    │   ├── pageObjects                       # Classes contain objects, methods for the page
+    │   ├── pageTest                          # Test classes, calling objects from pageObjects and do assertion
+    │   ├── seleniumTests                     # Base test set up and common repository
+    │   ├── utils.ExtentReports               # Extent Reports library class
+    │   └── utils.Listeners                   # Event listener for Extent Report
+    ├── src/test/resources                # Feature file, for Cucumber
+    └── ...
 
 ## Built With
 
