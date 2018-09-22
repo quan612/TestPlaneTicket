@@ -13,7 +13,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 	//WebDriver driver;
 	FlightHomePage flightHomePage;
 	FlightResultPage flightResultPage;
-	//CommonRepository common;
+
 
 	public String strAirlinePrefer = "China Eastern Airlines";
 	//	public FlightHomePageTest(WebDriver driver)
@@ -38,7 +38,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyUserIsPresentFlightTab(), "User is not present with flight tab, please recheck!!!");
 	}	
 
-	@Test(description="User can search for flight after entering destination, depart date, return date")
+	//@Test(description="User can search for flight after entering destination, depart date, return date")
 	public void Verify_User_Can_Search_For_Flight() 
 	{
 		String strDestination = "Ho Chi Minh City, Vietnam - Tan Son Nhat International [SGN]";
@@ -55,7 +55,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		//Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText(), "Search cheapest fare text is not exist, please recheck");
 	}
 
-	@Test(description="User can select different business class before searching for flight")
+	//@Test(description="User can select different business class before searching for flight")
 	public void Verify_User_Can_Select_Different_Business_Class() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
@@ -63,7 +63,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyBusinessClassComboBox());
 	}
 
-	@Test(description="User can see passenger type before searching for flight")
+	//@Test(description="User can see passenger type before searching for flight")
 	public void Verify_User_Can_Select_Different_Passenger_Type() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
@@ -71,7 +71,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyPassengerComboBox());
 	}
 	
-	@Test(description="User will see validation error when clicking on search flight button")
+	@Test //(description="User will see validation error when clicking on search flight button")
 	public void Verify_User_Is_Present_With_Validation_Errors() 
 	{		
 		flightHomePage = new FlightHomePage(driver);	
