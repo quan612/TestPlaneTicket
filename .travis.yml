@@ -45,5 +45,4 @@ before_script:
   - unzip chromedriver_linux64.zip
   - ls /home/travis/build/quan612/TestPlaneTicket
   
- script:
-  - maven clean test
+ install: maven clean test
