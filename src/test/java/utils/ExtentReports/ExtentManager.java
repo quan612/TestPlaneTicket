@@ -15,9 +15,10 @@ public class ExtentManager {
     private static String reportFileName = "ExtentReports-Version3-Test-Automaton-Report.html";
     private static String macPath = System.getProperty("user.dir")+ "/TestReport";
     private static String windowsPath = System.getProperty("user.dir")+ "\\TestReport";
+    private static String linuxPath = System.getProperty("user.dir")+ "\\TestReport";
     private static String macReportFileLoc = macPath + "/" + reportFileName;
     private static String winReportFileLoc = windowsPath + "\\" + reportFileName;
- 
+    private static String linuxReportFileLoc = linuxPath + "\\" + reportFileName;
     public static ExtentReports getInstance() {
         if (extent == null)
             createInstance();
@@ -55,6 +56,11 @@ public class ExtentManager {
                 reportFileLocation = winReportFileLoc;
                 createReportPath(windowsPath);
                 System.out.println("ExtentReport Path for WINDOWS: " + windowsPath + "\n");
+                break;
+            case LINUX:
+                reportFileLocation = linuxReportFileLoc;
+                createReportPath(linuxPath);
+                System.out.println("ExtentReport Path for Linux: " + linuxPath + "\n");
                 break;
             default:
                 System.out.println("ExtentReport path has not been set! There is a problem!\n");

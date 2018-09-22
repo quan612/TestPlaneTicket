@@ -64,6 +64,8 @@ public class BaseTestUsingTestNG {
 	public void afterClass() 
 	{
 		// Close the driver
+		String operSys = System.getProperty("os.name").toLowerCase();
+		System.out.println(operSys);
 		System.out.println("closing driver ");
 		driver.close();
 		//driver.quit();
