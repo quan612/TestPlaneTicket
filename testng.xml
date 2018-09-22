@@ -5,11 +5,11 @@
         <listener class-name="utils.Listeners.AnnotationTransformer"/> 
     </listeners>-->
   
- <!-- <test name="Firefox Test">
- 	<parameter name = "browser" value = "firefox"/> 
+  <test name="Chrome Test">
+ 	<parameter name = "browser" value = "chrome"/> 
    		<classes>    
      		<!--	<class name="cucumber.TestRunner.CucumberRunner"> -->
-    			<!--  <class name="pageTests.FlightResultPageTest"> -->
+    		<!--	 <class name="pageTests.FlightResultPageTest"> -->
     			   <class name="pageTests.FlightHomePageTest">
      			<!--  	<methods>
       				<include name="Verify_User_Is_Presented_At_Flight_Tab"></include>
@@ -17,16 +17,15 @@
 				</methods> -->
      			 </class>
    		</classes>
-  </test> -->
-   
-     
-  	<test name="Chrome Test">
-  			<parameter name = "browser" value = "chrome"/>
+  </test>   
+     <!--
+  	<test name="Firefox Test">
+  			<parameter name = "browser" value = "Firefox"/>
    				<classes>         			
     			 	<class name="cucumber.TestRunner.CucumberRunner">
     			  	<class name="pageTests.FlightHomePageTest">   		
      			 </class>
    		</classes>
   	</test> 
-  	 
+  	 --> 
 </suite>
