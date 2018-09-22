@@ -3,7 +3,7 @@ language: java
 addons:
   firefox: latest
   chrome: stable
-  
+install: true  
 env:
   global:
 #    - CAPTURE_URL="http://ec2-35-176-47-3.eu-west-2.compute.amazonaws.com"
