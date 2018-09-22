@@ -47,8 +47,8 @@ public class BaseTestUsingTestNG {
 		}
 		else if(browser.equals("chrome"))
 				{	//System.setProperty("webdriver.chrome.driver","J:\\Automation 2018\\chromedriver.exe");
-			  	System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
-			 	//System.setProperty("webdriver.chrome.driver","chromedriver");
+			  	//System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver.exe");
+			 	System.setProperty("webdriver.chrome.driver","chromedriver");
 				ChromeOptions chromeOptions = new ChromeOptions();  
 				//chromeOptions.addArguments("--headless");
 				chromeOptions.addArguments("--no-sandbox");
