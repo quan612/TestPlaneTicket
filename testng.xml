@@ -2,7 +2,7 @@
 <suite name="Suite">
     <listeners>
         <listener class-name="utils.Listeners.TestListener"/>
-        <listener class-name="utils.Listeners.AnnotationTransformer"/> 
+     <!--   <listener class-name="utils.Listeners.AnnotationTransformer"/> -->
     </listeners>
   
   <test name="Chrome Test">
