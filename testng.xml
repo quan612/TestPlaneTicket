@@ -5,7 +5,7 @@
         <listener class-name="utils.Listeners.AnnotationTransformer"/> 
     </listeners>-->
   
-  <test name="Firefox Test">
+ <!-- <test name="Firefox Test">
  	<parameter name = "browser" value = "firefox"/> 
    		<classes>    
      		<!--	<class name="cucumber.TestRunner.CucumberRunner"> -->
@@ -17,9 +17,9 @@
 				</methods> -->
      			 </class>
    		</classes>
-  </test>
+  </test> -->
    
-     <!--
+     
   	<test name="Chrome Test">
   			<parameter name = "browser" value = "chrome"/>
    				<classes>         			
@@ -28,5 +28,5 @@
      			 </class>
    		</classes>
   	</test> 
-  	 -->
+  	 
 </suite>

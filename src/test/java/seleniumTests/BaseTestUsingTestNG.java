@@ -38,7 +38,7 @@ public class BaseTestUsingTestNG {
 		
 		if(browser.equals("firefox"))
 		{
-				System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+				//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
 				//System.setProperty("webdriver.firefox.bin","C:\\Users\\Quan.Huynh\\AppData\\Local\\Nightly\\firefox.exe");		
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
 				firefoxOptions.addPreference("browser.link.open_newwindow", 1); 
