@@ -47,4 +47,5 @@ before_script:
   
 script: mvn clean test
 after_script:
-  - ls /home/travis/build/quan612/TestPlaneTicket\TestReport
+  - ls /home/travis/build/quan612/TestPlaneTicket
+  - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
