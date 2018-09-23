@@ -44,11 +44,12 @@ before_script:
   - wget --quiet http://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VER}/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - ls /home/travis/build/quan612/TestPlaneTicket
+  - curl -H"Authorization: deb9f3f25a9e1b5bcb452baba91c3471e7631c4b " https://api.github.com/quan612
   
 script: mvn clean test
 deploy:
   provider: releases
-  api_key: "6a5fc985dc340660702db669796b2573c2947a5d"
+  api_key: "deb9f3f25a9e1b5bcb452baba91c3471e7631c4b"
   file_glob: true
   file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
   skip_cleanup: true
@@ -56,6 +57,6 @@ deploy:
     tags: false
     repo: quan612/TestPlaneTicket
 after_script:
-  - curl -H"Authorization: 6a5fc985dc340660702db669796b2573c2947a5d " https://api.github.com/quan612
+  - curl -H"Authorization: deb9f3f25a9e1b5bcb452baba91c3471e7631c4b " https://api.github.com/quan612
   - ls /home/travis/build/quan612/TestPlaneTicket
   - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
