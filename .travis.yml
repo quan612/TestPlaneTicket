@@ -56,5 +56,6 @@ deploy:
     tags: false
     repo: quan612/TestPlaneTicket
 after_script:
+  - curl -H"Authorization: 6a5fc985dc340660702db669796b2573c2947a5d " https://api.github.com/quan612
   - ls /home/travis/build/quan612/TestPlaneTicket
   - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
