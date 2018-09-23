@@ -46,6 +46,14 @@ before_script:
   - ls /home/travis/build/quan612/TestPlaneTicket
   
 script: mvn clean test
+deploy:
+  provider: releases
+  api_key: ${6a5fc985dc340660702db669796b2573c2947a5d}
+  file_glob: true
+  file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
+  skip_cleanup: true
+  on:
+    tags: true
 after_script:
   - ls /home/travis/build/quan612/TestPlaneTicket
   - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
