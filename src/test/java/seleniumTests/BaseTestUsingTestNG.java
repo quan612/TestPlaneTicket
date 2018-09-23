@@ -32,8 +32,8 @@ public class BaseTestUsingTestNG {
 	@Parameters("browser")
 	public void beforeClass(String browser) {
 		System.out.println("Starting web driver! Running test on " + browser);		
-		System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");		
-		//System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
+		//System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");		
+		System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 		//System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");		
 		
 		if(browser.equals("firefox"))
