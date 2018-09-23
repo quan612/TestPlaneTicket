@@ -53,7 +53,7 @@ deploy:
   file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
 after_script:
   - ls /home/travis/build/quan612/TestPlaneTicket
   - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
