@@ -47,6 +47,10 @@ before_script:
 #  - "curl -H 'Authorization: token deb9f3f25a9e1b5bcb452baba91c3471e7631c4b' https://api.github.com/quan612"
   
 script: mvn clean install
+
+before_deploy:
+  - zip -r report.zip /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*
+  - ls /home/travis/build/quan612/TestPlaneTicket/
 deploy:
   provider: releases
   api_key: ${api_key}
@@ -58,7 +62,7 @@ deploy:
   on:
     tags: false
     repo: quan612/TestPlaneTicket
-    all_branches: true
+#    all_branches: true
 #    branches:
 #      only:      # ← new!
 #        - master
