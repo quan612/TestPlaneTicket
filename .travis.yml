@@ -63,7 +63,7 @@ deploy:
 #    all_branches: true
     branches:    # ← new!
       only:      # ← new!
-        - master # ← new!
+        - master
 after_script:
 
   - ls /home/travis/build/quan612/TestPlaneTicket
