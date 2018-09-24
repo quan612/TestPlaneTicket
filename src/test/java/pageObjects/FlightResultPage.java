@@ -12,7 +12,7 @@ import seleniumTests.CommonRepository;
 
 public class FlightResultPage {
 	WebDriver driver;
-	
+
 	CommonRepository common;
 
 	// search fare model dialog
@@ -62,7 +62,7 @@ public class FlightResultPage {
 		}
 	}
 
-	public void GetFirstPriceInFlightResultDetail() //no
+	public void GetAllPriceInFlightResultDetail() //no
 	{
 		//WebElement divFarePackageList = driver.findElement(flightSearchResult);
 		//System.out.println("test valid " + divFarePackageList.isDisplayed());
@@ -73,9 +73,9 @@ public class FlightResultPage {
 		common.ExplicitWaitForElement(flightSearchResult);
 		WebElement ulPackageOsExtension = driver.findElement(flightSearchResult);		
 		List<WebElement> liListAllFlightDetail = ulPackageOsExtension.findElements(By.cssSelector("li[data-package-list='one-step']"));
-		List<WebElement> test2 = ulPackageOsExtension.findElements(By.xpath(".//li[@data-package-list='one-step']"));
-		System.out.println("li size1 " + liListAllFlightDetail.size());
-		System.out.println("li size2 " + test2.size());
+		//List<WebElement> test2 = ulPackageOsExtension.findElements(By.xpath(".//li[@data-package-list='one-step']"));
+		//System.out.println("li size1 " + liListAllFlightDetail.size());
+		
 		getPricesFromPackageList(liListAllFlightDetail);
 	}
 
@@ -102,12 +102,12 @@ public class FlightResultPage {
 		} 
 		catch (NoSuchElementException e) {
 			System.out.println("No show more link " + e);
-			
+
 		}
 		catch (Exception e) {
 			System.out.println("Exception is " + e);
 		}
-		
+
 	}
 
 	public void ClickOnSelectAllAirlinesCheckBox() //ok
@@ -118,17 +118,17 @@ public class FlightResultPage {
 			WebElement leftSideBarSelectAllCheckBoxControl = driver.findElement(leftSideBarSelectAllCheckBox);
 			if(leftSideBarSelectAllCheckBoxControl.isDisplayed())			
 				leftSideBarSelectAllCheckBoxControl.click();
-			
+
 		} 
 		catch (Exception e) {
 			System.out.println("Exception is " + e);
 		}		
 	}
 
-	public void SelectPreferAirlineBrand(String strAirlineBrand) //ok
+	public void SelectPreferAirlineBrand(String strAirlineBrand) 
 	{
 		//Actions action = new Actions(driver);
-		System.out.println("Selecting a prefer airline brand");
+		System.out.println("Selecting a prefer airline brand" + strAirlineBrand);
 		common.ExplicitWaitForElement(leftSideBarAllAirlineBrands);
 		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);		
 		List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElements(By.tagName("li"));
@@ -136,7 +136,7 @@ public class FlightResultPage {
 		// clicking on prefer airline brand
 		//int i = 1;
 		airlineBrands.remove(0); //remove the first li because it contains select all text but not the airline brand
-		//for (WebElement liParents = airlineBrands.get(i);  liParents == airlineBrands.get(airlineBrands.size() - 1); airlineBrands.get(i++)) {			
+					
 		for (WebElement liParents : airlineBrands) {	
 			WebElement divParent = liParents.findElement(By.tagName("div"));
 			WebElement childInput = divParent.findElement(By.tagName("input"));	
@@ -150,7 +150,7 @@ public class FlightResultPage {
 			}					
 		}
 	}
-	
+
 	public void GetAllAirlineBrandsName()
 	{
 		/* good
@@ -162,12 +162,12 @@ public class FlightResultPage {
 			airLineNames.add(childLabel.getText().toString());		
 		}
 		good */
-		
-		
+
+
 		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);		
 		List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElements(By.tagName("li"));
-		airlineBrands.remove(0); 
-		
+		airlineBrands.remove(0);  //remove the first li because it contains select all text but not the airline brand	
+
 		List<String> airLineNames = new ArrayList<String>();
 		airlineBrands.forEach(item -> airLineNames.add(item.findElement(By.tagName("div")).findElement(By.tagName("label")).getText())); //.stream().map(x -> x.getText()));   //.findElement(By.tagName("label")).stream().map(x -> x.getText()).collect(Collectors.toList());
 		System.out.println("List of airline name !!!!! ");
@@ -190,7 +190,7 @@ public class FlightResultPage {
 
 
 	/* ** flight result private method ** */
-	
+
 	private void getPricesFromPackageList(List<WebElement> list) 
 	{
 		try
@@ -245,6 +245,7 @@ public class FlightResultPage {
 	public boolean VerifySearchFareModalDialogExist()
 	{
 		try {
+			System.out.println("Verify if search modal dialog exists");
 			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(searchFaresModalDialog));
 			WebElement modalDialogExist = driver.findElement(searchFaresModalDialog);			
 
@@ -265,17 +266,24 @@ public class FlightResultPage {
 	}
 	public boolean VerifySearchCheapestFaresText()
 	{
-		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(searchCheapestFaresText));
-		WebElement searchFaresText = driver.findElement(searchCheapestFaresText);		
-		if(searchFaresText.isDisplayed() 
-				&& searchFaresText.getCssValue("visibility").equals("visible")
-				&& searchFaresText.getText().equals("Searching for our cheapest fares!"))
-		{
-			System.out.println("Search for fare text is present!!!");		
-			return true;
+		try {
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(searchCheapestFaresText));
+			WebElement searchFaresText = driver.findElement(searchCheapestFaresText);	
+			
+			if(searchFaresText.isDisplayed() 
+					&& searchFaresText.getCssValue("visibility").equals("visible")
+					&& searchFaresText.getText().equals("Searching for our cheapest fares!"))
+			{
+				System.out.println("Search for fare text is present!!!");		
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
 		}
-		else 
-		{
+		catch (Exception e) {
+			System.out.println("Exception is " + e);
 			return false;
 		}
 	}
@@ -305,6 +313,6 @@ public class FlightResultPage {
 		}
 		else
 			return false;
-		
+
 	}
 }

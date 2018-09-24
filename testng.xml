@@ -1,31 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
     <listeners>
-        <listener class-name="utils.Listeners.TestListener"/>
-     <!--   <listener class-name="utils.Listeners.AnnotationTransformer"/> -->
+        <listener class-name="utils.Listeners.TestListener"/>     
     </listeners>
   
-  <test name="Chrome Test">
- 	<parameter name = "browser" value = "chrome"/> 
+  <test name="Firefox Test">
+ 	<parameter name = "browser" value = "firefox"/> 
    		<classes>    
-     		<!--	<class name="cucumber.TestRunner.CucumberRunner"> -->
-    		<!--	 <class name="pageTests.FlightResultPageTest"> -->
-    			   <class name="pageTests.FlightHomePageTest">
+     		<!--	<class name="cucumber.TestRunner.CucumberRunner"> </class> -->
+    			<class name="pageTests.FlightResultPageTest"></class>
+    		    <class name="pageTests.FlightHomePageTest"></class>
      			<!--  	<methods>
       				<include name="Verify_User_Is_Presented_At_Flight_Tab"></include>
 					<include name="Verify_User_Can_Search_For_Flight"></include>
-				</methods> -->
-     			 </class>
+				</methods> -->     			 
    		</classes>
   </test>   
-     <!--
-  	<test name="Firefox Test">
-  			<parameter name = "browser" value = "Firefox"/>
+     
+  	<!--<test name="Chrome Test">
+  			<parameter name = "browser" value = "chrome"/>
    				<classes>         			
     			 	<class name="cucumber.TestRunner.CucumberRunner">
     			  	<class name="pageTests.FlightHomePageTest">   		
      			 </class>
    		</classes>
-  	</test> 
-  	 --> 
+  	</test>-->  	  
 </suite>

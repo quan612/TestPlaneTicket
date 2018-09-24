@@ -15,33 +15,28 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 	String strDepartDate = "15/11/2018";
 	String strReturnDate = "16/12/2018";
 	String preferAirline = "China Eastern Airlines";
-	//@Test
+	
+	@Test(description="User can see a progress bar when ticket being searched")
 	public void Verify_There_Is_A_Progess_Bar_When_Ticket_Is_Being_Searched()
-	{
-				
-			flightHomePage = new FlightHomePage(driver);
-			
+	{				
+			flightHomePage = new FlightHomePage(driver);			
 			flightHomePage.UserEnterFlightDestination(strDestination);
 			flightHomePage.UserPickDepartDate(strDepartDate);
-			flightHomePage.UserPickReturnDate(strReturnDate);		
-			flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();
+			flightHomePage.UserPickReturnDate(strReturnDate);					
 			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();			
 			
 			Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist());
-			Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText());		
-			Assert.assertTrue(flightResultPage.VerifySearchProgessBarExist());
-			//flightResultPage.WaitForFlightResultPageLoad();			
+			//Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText());		
+			Assert.assertTrue(flightResultPage.VerifySearchProgessBarExist());					
 	}
 	
-	@Test
+	@Test(description="User can see all airline brands after searching for a flight")
 	public void Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select()
-	{
-					
+	{					
 			flightHomePage = new FlightHomePage(driver);
 			flightHomePage.UserEnterFlightDestination(strDestination);
 			flightHomePage.UserPickDepartDate(strDepartDate);
-			flightHomePage.UserPickReturnDate(strReturnDate);		
-			flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();
+			flightHomePage.UserPickReturnDate(strReturnDate);					
 			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 				
 			flightResultPage.WaitForFlightResultPageLoad();
@@ -50,22 +45,20 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 			flightResultPage.GetAllAirlineBrandsName();	
 	}
 	
-	//@Test
+	@Test(description="User can see cheapest price for a certain flight brand")
 	public void Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand()
-	{
-					
+	{					
 			flightHomePage = new FlightHomePage(driver);
 			flightHomePage.UserEnterFlightDestination(strDestination);
 			flightHomePage.UserPickDepartDate(strDepartDate);
-			flightHomePage.UserPickReturnDate(strReturnDate);		
-			flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();
+			flightHomePage.UserPickReturnDate(strReturnDate);			
 			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 				
 			flightResultPage.WaitForFlightResultPageLoad();
 			flightResultPage.ClickOnShowMoreLinkToSeeMoreAirlineOptions();
 			flightResultPage.SelectPreferAirlineBrand(preferAirline);
 			flightResultPage.WaitForFlightResultWhenSelectingPreferAirline();
-			flightResultPage.GetFirstPriceInFlightResultDetail();
+			flightResultPage.GetAllPriceInFlightResultDetail();
 	}
 
 }

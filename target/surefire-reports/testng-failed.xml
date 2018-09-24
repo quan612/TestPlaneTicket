@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="utils.Listeners.TestListener"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="Firefox Test flight home page(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="pageTests.FlightResultPageTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand"/>
+          <include name="beforeSuite"/>
+          <include name="afterClass"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- pageTests.FlightResultPageTest -->
+    </classes>
+  </test> <!-- Firefox Test flight home page(failed) -->
+</suite> <!-- Failed suite [Suite] -->
