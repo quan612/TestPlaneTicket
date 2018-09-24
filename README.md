@@ -60,7 +60,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  ```
 
 ## Acknowledgments
-The project follows guidelines from following:
+The project follows guidelines from the following:
 
 [ClueCumberReport](https://github.com/trivago/cluecumber-report-plugin)
 
