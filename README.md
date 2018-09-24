@@ -2,10 +2,9 @@
 
 A Simple Selenium project written in Java to demonstrate how I build the test automation in my workplace. 
 
-## Getting Started
-The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes. 
+## Introduction 
 
-The project follows page object framework design pattern. Page objects classes contain elements, methods, actions, behaviors for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
+The project follows page object framework design pattern. The page objects classes contain page elements, methods, actions, test methods for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
 
 
 ## Project structure
@@ -32,6 +31,14 @@ The project follows page object framework design pattern. Page objects classes c
 * [TestNG 6.14.3](https://testng.org/) - Test Framework supports using of Annotations
 * [ClueCumber 1.4](https://github.com/trivago/cluecumber-report-plugin/) - Generate Cucumber report based on Cucumber json result
 * [Extent Report 3.1.5](http://extentreports.com/) - Logger
+
+## Usage 
+The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes.
+
+Markup : <details>
+           <summary>TestNG</summary>
+           <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+         </details>
 
 ## Acknowledgments
 The project follows guidelines from following:
