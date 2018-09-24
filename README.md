@@ -28,6 +28,7 @@ The project follows page object framework design pattern. The page objects class
 * [Selenium 3](https://www.seleniumhq.org/) - The testing framework
 * [Maven 3.5.3](https://maven.apache.org/) - Dependency Management
 * [Cucumber Java 1.2.5](https://docs.cucumber.io/installation/java/) - Test Driven Design
+* [Java JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/)
 * [TestNG 6.14.3](https://testng.org/) - Test Framework supports using of Annotations
 * [ClueCumber 1.4](https://github.com/trivago/cluecumber-report-plugin/) - Generate Cucumber report based on Cucumber json result
 * [Extent Report 3.1.5](http://extentreports.com/) - Logger
