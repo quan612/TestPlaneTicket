@@ -33,11 +33,19 @@ The project follows page object framework design pattern. The page objects class
 * [ClueCumber 1.4](https://github.com/trivago/cluecumber-report-plugin/) - Generate Cucumber report based on Cucumber json result
 * [Extent Report 3.1.5](http://extentreports.com/) - Logger
 
-## Usage 
+## Usage
+
 The test can be run as TestNG test - using @Test annotations or using Cucumber feature file in which the steps are separated into different classes.
 
 1. Download the project and extract the folder.
-2. Specify how the tests run.
+2. Modify environment.
+ **BaseTestUsingTestNG.java**
+ ```bash
+ Modify gecko driver path
+ Modify Chrome path
+ Modiy Firefox path
+ ```
+3. Specify how the tests run.
 
  **testng.xml**
  
