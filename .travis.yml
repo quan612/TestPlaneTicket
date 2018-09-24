@@ -55,6 +55,7 @@ deploy:
 # password: Qu@n6121988
   file_glob: true
   file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
+  keep-history: true
   skip_cleanup: true
   on:
     tags: true
