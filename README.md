@@ -52,7 +52,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
            <summary>Execute test with Cucumber feature</summary>
            <p>
  ```bash
- Specify these class name to have the tests run as testNG
+ Specify these class name to have the tests run with Cucumber feature
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
  </p>
