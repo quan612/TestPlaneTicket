@@ -71,7 +71,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyPassengerComboBox());
 	}
 	
-	@Test //(description="User will see validation error when clicking on search flight button")
+	@Test (description="User will see validation error when clicking on search flight button")
 	public void Verify_User_Is_Present_With_Validation_Errors() 
 	{		
 		flightHomePage = new FlightHomePage(driver);	
