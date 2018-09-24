@@ -49,7 +49,7 @@ before_script:
 script: mvn clean test
 deploy:
   provider: releases
-  api_key: "126d91e4e57fda105c6956cf3774ba100bb3abdf"
+  api_key: "NttNhwRBc04Y5csDc1RIIA"
 #  user: quan612
 # password: Qu@n6121988
   file_glob: true
