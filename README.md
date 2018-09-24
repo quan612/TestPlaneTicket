@@ -42,9 +42,9 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
            <summary>Execute test with TestNG tags</summary>
            <p>
  ```bash
-        Specify these class name to have the tests run as testNG
-          <class name="pageTests.FlightResultPageTest"></class>
-    		    <class name="pageTests.FlightHomePageTest"></class>       
+ Specify these class name to have the tests run as testNG
+ <class name="pageTests.FlightResultPageTest"></class>
+ <class name="pageTests.FlightHomePageTest"></class>       
  ```
  </p>
          </details>
@@ -52,8 +52,8 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
            <summary>Execute test with Cucumber feature</summary>
            <p>
  ```bash
-        Specify these class name to have the tests run as testNG
-          <class name="cucumber.TestRunner.CucumberRunner">  
+ Specify these class name to have the tests run as testNG
+ <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
  </p>
          </details> 
