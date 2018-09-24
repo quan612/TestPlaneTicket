@@ -60,10 +60,10 @@ deploy:
   on:
     tags: true
     repo: quan612/TestPlaneTicket
-#    all_branches: true
-    branches:    # ← new!
-      only:      # ← new!
-        - master
+    all_branches: true
+#    branches:    # ← new!
+#      only:      # ← new!
+#        - master
 after_script:
 
   - ls /home/travis/build/quan612/TestPlaneTicket
