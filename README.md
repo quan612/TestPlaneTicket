@@ -64,7 +64,8 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  *Executing the tests using Maven command*
   ```bash
  mvn clean
- mvn test
+ mvn test -- for TestNG
+ mvn install -- for Cucumber
  ```
 
 ## Issue :x:
