@@ -49,9 +49,9 @@ before_script:
 script: mvn clean test
 deploy:
   provider: releases
-#  api_key: "4987d0552258e160e7751fd0f5ff77cb5a0c09f1"
-  user: quan612
-  password: Qu@n6121988
+  api_key: "60342995ed9a4a379083b199c0e6befb83645db5 "
+#  user: quan612
+# password: Qu@n6121988
   file_glob: true
   file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
   skip_cleanup: true
