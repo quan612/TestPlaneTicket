@@ -39,7 +39,7 @@ import com.github.mkolisnyk.cucumber.runner.ExtendedTestNGRunner;
 		,plugin = {"json:target/cucumber-report/cucumber.json"}
 		,monochrome = true) 
 
-public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTestNGRunner //extends AbstractTestNGCucumberTests
+public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTestNGRunner //extends AbstractTestNGCucumberTests  sss
 {
 	public static WebDriver driver;
 	private TestNGCucumberRunner testRunner;
