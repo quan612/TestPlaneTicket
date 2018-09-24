@@ -50,9 +50,6 @@ script: mvn clean test
 deploy:
   provider: releases
   api_key: ${api_key}
-#    secure: "VAdRCvda7RQIbFMpc46CzTiMyaUKpX7abOYfL3GsYIxuUKKsf8IQGphhUOIVB1cm2ps99UAjJOAr3uyWwKV9b+4jq+NwOc8Mi7wNMUG736/gyEDLDbI5MHjQvzjNeoQkADKhNCGFROAhhBcMdtha4HWi1+SOrKnbXxoy5pn4EnXsrJyXWze2vlfgnLl1LFd6EIarkgqIlo7jB9Le8xoZLGiK7LGdXBq7L8w+iX/R1k3X0xak0r+ndrWyyNsoaJM5Pvy9Yaqs1v3jUpk1AqyIUVGpWGuLlbWxNa/R96XVoOdemh72a8oiDGGtiWTxNI+vmkfqiC6Hb3rUN0Lxy+WB0woRFu/qvR072pRHmF3YOjk+TP0v5eYBgaCWq3S0s6e2hmFy4KKMWFk7JFs4xo4Jln04OB3UbL1zFBiFeECS8oVJP/qbYyAB6Mg16G2xJN002xJ1kAg2uBIOUTTgZYvprHuL+id4kijXF3N4OIRlmAv5ikzavqmA86p87R+s6/g6ZKiTCdkU1iV0R3mjaYOy3lzIhkiY/d8PZBE+JdkECXrothYkoOdYxBh5feDCx/QxJcEssQxZcWqAVIJw/cZf0Jddc6uyXpMRz7PfX0Umh59zVpEv8T0dYIU0ZsVrRUvimbPmoMPm+IqMRZ3dJGCOTJSKr2RMl+Q9Hm4tm9SBfXM="
-#  user: quan612
-# password: Qu@n6121988
   file_glob: true
   file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
   keep-history: false
@@ -60,10 +57,10 @@ deploy:
   on:
     tags: true
     repo: quan612/TestPlaneTicket
-#    all_branches: true
-    branch: master
-#      only:      # ← new!
-#        - master
+    all_branches: true
+    branches:
+      only:      # ← new!
+        - master
 		
 after_script:
 
