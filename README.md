@@ -50,6 +50,12 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
  
+ **Maven**
+ *Executing the tests using Maven command*
+  ```bash
+ mvn clean
+ mvn test
+ ```
 
 ## Acknowledgments
 The project follows guidelines from following:
