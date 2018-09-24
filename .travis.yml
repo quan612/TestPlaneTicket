@@ -51,7 +51,8 @@ deploy:
   provider: releases
   api_key: ${api_key}
   file_glob: true
-  file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
+# file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
+  file: "/home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*"
   keep-history: false
   skip_cleanup: true
   on:
@@ -63,5 +64,5 @@ deploy:
 #        - master
 
 after_script:
-  - ls /home/travis/build/quan612/TestPlaneTicket
+  - ls /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/
   - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
