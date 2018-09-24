@@ -1,11 +1,10 @@
-# TestPlaneTicket  
-[![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
+# TestPlaneTicket         [![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
+
 A Simple Selenium project written in Java to demonstrate how I build the test automation in my workplace. 
 
-## Getting Started
-The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes. 
+## Introduction 
 
-The project follows page object framework design pattern. Page objects classes contain elements, methods, actions, behaviors for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
+The project follows page object framework design pattern. The page objects classes contain page elements, methods, actions, test methods for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
 
 
 ## Project structure
@@ -27,14 +26,51 @@ The project follows page object framework design pattern. Page objects classes c
 ## Built With
 
 * [Selenium 3](https://www.seleniumhq.org/) - The testing framework
-* [Maven](https://maven.apache.org/) - Dependency Management
+* [Maven 3.5.3](https://maven.apache.org/) - Dependency Management
 * [Cucumber Java 1.2.5](https://docs.cucumber.io/installation/java/) - Test Driven Design
+* [Java JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html/)
 * [TestNG 6.14.3](https://testng.org/) - Test Framework supports using of Annotations
 * [ClueCumber 1.4](https://github.com/trivago/cluecumber-report-plugin/) - Generate Cucumber report based on Cucumber json result
 * [Extent Report 3.1.5](http://extentreports.com/) - Logger
 
+## Usage
+
+The test can be run as TestNG test - using @Test annotations or using Cucumber feature file in which the steps are separated into different classes.
+
+1. Download the project and extract the folder.
+2. Modify environment.
+ **BaseTestUsingTestNG.java**
+ ```bash
+ Modify gecko driver path
+ Modify Chrome path
+ Modiy Firefox path
+ ```
+3. Specify how the tests run.
+
+ **testng.xml**
+ 
+ *Specify class name to have the tests run with testNG*
+ ```bash
+ <class name="pageTests.FlightResultPageTest"></class>
+ <class name="pageTests.FlightHomePageTest"></class>       
+ ```
+ *Specify class name to have the tests run with Cucumber feature*
+ ```bash 
+ <class name="cucumber.TestRunner.CucumberRunner"></class>  
+ ```
+ 
+ **Maven**
+ 
+ *Executing the tests using Maven command*
+  ```bash
+ mvn clean
+ mvn test
+ ```
+
+## Issue :x:
+Having issue running the test on Chrome as the browser opens the link on new tab. Adding "setAttribute('target', '_self')" does not solve the issue
 ## Acknowledgments
-The project follows guidelines from following:
+The project follows guidelines from the following:
 
 [ClueCumberReport](https://github.com/trivago/cluecumber-report-plugin)
 
