@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="110.29" tests="5" errors="0" skipped="0" failures="1">
+<testsuite name="TestSuite" time="9.267" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_161\jre\bin"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_161\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -64,49 +64,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select" classname="pageTests.FlightResultPageTest" time="43.183"/>
-  <testcase name="Verify_There_Is_A_Progess_Bar_When_Ticket_Is_Being_Searched" classname="pageTests.FlightResultPageTest" time="11.28"/>
-  <testcase name="Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand" classname="pageTests.FlightResultPageTest" time="55.41">
-    <failure message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;main_search_fares_form&apos;]/div[2]/div/div[3]/div[2]/div[2] (tried for 20 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='main_search_fares_form']/div[2]/div/div[3]/div[2]/div[2] (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
-	at pageObjects.FlightHomePage.UserPickReturnDate(FlightHomePage.java:92)
-	at pageTests.FlightResultPageTest.Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand(FlightResultPageTest.java:54)
-</failure>
-    <system-out>Verify_There_Is_A_Progess_Bar_When_Ticket_Is_Being_Searched passed!
-closing driver 
-Starting web driver! Running test on firefox
-Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand started!
-</system-out>
-    <system-err>1537812602621	Marionette	INFO	Stopped listening on port 34981
-[Parent 121580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 128292, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 128292, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Parent 121580, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-[Child 129696, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-1537812603227	geckodriver	INFO	geckodriver 0.20.1
-1537812603233	geckodriver	INFO	Listening on 127.0.0.1:2287
-1537812603729	mozrunner::runner	INFO	Running command: "C:/Program Files (x86)/Mozilla Firefox/firefox.exe" "-marionette" "-headless" "-profile" "C:\\Users\\QUAN~1.HUY\\AppData\\Local\\Temp\\rust_mozprofile.PFkRe9AETbRI"
-*** You are running in headless mode.
-1537812605028	Marionette	INFO	Listening on port 35450
-1537812605237	Marionette	WARN	TLS certificate errors will be ignored for this session
-1537812605260	Marionette	DEBUG	[6442450945] Frame script loaded
-1537812605264	Marionette	DEBUG	[6442450945] Frame script registered
-Sep 24, 2018 2:10:05 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: W3C
-1537812608798	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
-1537812609464	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
-1537812609877	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.flighthub.com/
-JavaScript warning: https://www.googletagmanager.com/gtag/js?id=DC-8177313, line 74: unreachable code after return statement
-JavaScript warning: https://www.googletagmanager.com/gtag/js?id=DC-8177313, line 74: unreachable code after return statement
-1537812611127	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.flighthub.com/
-</system-err>
-  </testcase>
-  <testcase name="Verify_Page_Title_And_User_Is_Presented_At_Flight_Tab_In_Flight_Home_Page" classname="pageTests.FlightHomePageTest" time="0.058"/>
-  <testcase name="Verify_User_Can_Select_Different_Business_Class" classname="pageTests.FlightHomePageTest" time="0.359"/>
+  <testcase name="UserCanSearchForFlightTicket" classname="cucumber.TestRunner.CucumberRunner" time="9.267"/>
 </testsuite>

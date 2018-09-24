@@ -9,32 +9,10 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">Firefox Test flight home page</a></td><td class="num">4</td><td class="num">0</td><td class="num attn">1</td><td class="num">162,894</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Firefox Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">16,656</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Firefox Test flight home page &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">pageTests.FlightResultPageTest</td><td><a href="#m0">Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand</a></td><td rowspan="1">1537812611127</td><td rowspan="1">55403</td></tr><tr><th colspan="4">Firefox Test flight home page &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">pageTests.FlightHomePageTest</td><td><a href="#m1">Verify_Page_Title_And_User_Is_Presented_At_Flight_Tab_In_Flight_Home_Page</a></td><td rowspan="1">1537812674950</td><td rowspan="1">58</td></tr><tr class="passedeven"><td><a href="#m2">Verify_User_Can_Select_Different_Business_Class</a></td><td rowspan="1">1537812683861</td><td rowspan="1">359</td></tr><tr class="passedodd"><td rowspan="2">pageTests.FlightResultPageTest</td><td><a href="#m3">Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select</a></td><td rowspan="1">1537812532479</td><td rowspan="1">43181</td></tr><tr class="passedodd"><td><a href="#m4">Verify_There_Is_A_Progess_Bar_When_Ticket_Is_Being_Searched</a></td><td rowspan="1">1537812591339</td><td rowspan="1">11276</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Firefox Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">cucumber.TestRunner.CucumberRunner</td><td><a href="#m0">UserCanSearchForFlightTicket</a></td><td rowspan="1">1537819204392</td><td rowspan="1">9265</td></tr></tbody>
 </table>
-<h2>Firefox Test flight home page</h2><h3 id="m0">pageTests.FlightResultPageTest#Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;main_search_fares_form&apos;]/div[2]/div/div[3]/div[2]/div[2] (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:81)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:271)
-	at pageObjects.FlightHomePage.UserPickReturnDate(FlightHomePage.java:92)
-	at pageTests.FlightResultPageTest.Verify_User_Can_Get_Cheapest_Price_After_Selecting_An_Airline_Brand(FlightResultPageTest.java:54)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //div[@class=&apos;main_search_fares_form&apos;]/div[2]/div/div[3]/div[2]/div[2]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.11.0&apos;, revision: &apos;e59cfb3&apos;, time: &apos;2018-03-11T20:26:55.152Z&apos;
-System info: host: &apos;QHUY&apos;, ip: &apos;172.16.77.96&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_161&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:896)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:206)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:202)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)
-	... 36 more
-... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">pageTests.FlightHomePageTest#Verify_Page_Title_And_User_Is_Presented_At_Flight_Tab_In_Flight_Home_Page</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">pageTests.FlightHomePageTest#Verify_User_Can_Select_Different_Business_Class</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">pageTests.FlightResultPageTest#Verify_There_Is_A_List_Of_Airline_Brands_That_User_Can_Select</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">pageTests.FlightResultPageTest#Verify_There_Is_A_Progess_Bar_When_Ticket_Is_Being_Searched</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Firefox Test</h2><h3 id="m0">cucumber.TestRunner.CucumberRunner#UserCanSearchForFlightTicket</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>User Can search for Flight ticket</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
