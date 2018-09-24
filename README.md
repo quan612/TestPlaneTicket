@@ -39,14 +39,13 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 2. Specify how the tests run.
 
 **testng.xml** :
+ *Specify these class name to have the tests run as testNG*
  ```bash
- Specify these class name to have the tests run as testNG
  <class name="pageTests.FlightResultPageTest"></class>
  <class name="pageTests.FlightHomePageTest"></class>       
  ```
- 
- ```bash
- Specify these class name to have the tests run with Cucumber feature
+ *Specify these class name to have the tests run with Cucumber feature*
+ ```bash 
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
  
