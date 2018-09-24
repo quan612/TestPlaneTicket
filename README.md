@@ -1,5 +1,5 @@
-# TestPlaneTicket  
-[![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
+# TestPlaneTicket         [![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
+
 A Simple Selenium project written in Java to demonstrate how I build the test automation in my workplace. 
 
 ## Getting Started
