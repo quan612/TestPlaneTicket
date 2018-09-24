@@ -26,7 +26,7 @@ The project follows page object framework design pattern. The page objects class
 ## Built With
 
 * [Selenium 3](https://www.seleniumhq.org/) - The testing framework
-* [Maven](https://maven.apache.org/) - Dependency Management
+* [Maven 3.5.3](https://maven.apache.org/) - Dependency Management
 * [Cucumber Java 1.2.5](https://docs.cucumber.io/installation/java/) - Test Driven Design
 * [TestNG 6.14.3](https://testng.org/) - Test Framework supports using of Annotations
 * [ClueCumber 1.4](https://github.com/trivago/cluecumber-report-plugin/) - Generate Cucumber report based on Cucumber json result
@@ -40,12 +40,12 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 
 **testng.xml** :
 
- *Specify these class name to have the tests run as testNG*
+ *Specify class name to have the tests run with testNG*
  ```bash
  <class name="pageTests.FlightResultPageTest"></class>
  <class name="pageTests.FlightHomePageTest"></class>       
  ```
- *Specify these class name to have the tests run with Cucumber feature*
+ *Specify class name to have the tests run with Cucumber feature*
  ```bash 
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
