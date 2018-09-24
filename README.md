@@ -67,6 +67,8 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  mvn test
  ```
 
+## Issue :x:
+Having issue running the test on Chrome as the browser opens the link on new tab. Adding "setAttribute('target', '_self')" does not solve the issue
 ## Acknowledgments
 The project follows guidelines from the following:
 
