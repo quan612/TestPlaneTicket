@@ -38,25 +38,18 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 1. Download the project and extract the folder.
 2. Specify how the tests run.
 
-**testng.xml** : <details>
-           <summary>Execute test with TestNG tags</summary>
-           <p>
+**testng.xml** :
  ```bash
  Specify these class name to have the tests run as testNG
  <class name="pageTests.FlightResultPageTest"></class>
  <class name="pageTests.FlightHomePageTest"></class>       
  ```
- </p>
-         </details>
-         <details>
-           <summary>Execute test with Cucumber feature</summary>
-           <p>
+ 
  ```bash
  Specify these class name to have the tests run with Cucumber feature
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
- </p>
-         </details> 
+ 
 
 ## Acknowledgments
 The project follows guidelines from following:
