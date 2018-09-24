@@ -21,7 +21,8 @@ env:
     # Required to turn on workaround for the following issue:
     # https://github.com/travis-ci/travis-ci/issues/8836
     - CHROME_NO_SANDBOX=true
-
+    - GIT_BRANCH: master
+    - GIT_TAG=testTag
 before_install:
   #- start your web application and listen on `localhost`
   #- google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -56,7 +57,7 @@ deploy:
   api_key: ${api_key}
   file_glob: true
 # file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
-  file: "/home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*"
+  file: "/home/travis/build/quan612/TestPlaneTicket/report.zip"
   keep-history: false
   skip_cleanup: true
   on:
