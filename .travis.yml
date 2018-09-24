@@ -58,7 +58,7 @@ deploy:
   keep-history: true
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
     repo: quan612/TestPlaneTicket
     all_branches: true
 #    branches:    # ← new!
