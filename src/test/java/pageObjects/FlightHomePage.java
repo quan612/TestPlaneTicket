@@ -55,6 +55,7 @@ public class FlightHomePage {
 		}
 		catch(Exception e)
 		{
+			System.out.println("Catch exception " + e);
 			return null;
 		}
 	}
@@ -62,15 +63,14 @@ public class FlightHomePage {
 	{	
 		try
 		{
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(toDestinationTxtBox));
-			//driver.findElement(toDestinationTxtBox).click();		
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(toDestinationTxtBox));					
 			new Actions(driver).moveToElement(driver.findElement(toDestinationTxtBox)).click().perform();
 			driver.findElement(toDestinationTxtBox).sendKeys(destination);		
 			driver.findElement(toDestinationTxtBox).sendKeys(Keys.TAB);		
 		}
 		catch(Exception e)
 		{
-
+			System.out.println("Catch exception " + e);
 		}
 	}
 	public void UserPickDepartDate(String departDate)
@@ -79,36 +79,56 @@ public class FlightHomePage {
 		{
 			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(departTextBox));
 			driver.findElement(departTextBox).click();
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(datePickerControl));
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(datePickerControl)); //wait until picker control is located
 			common.SelectADayInDatePicker(departDate, driver);		
 		}
 		catch(Exception e)
 		{
-
+			System.out.println("Catch exception " + e);
 		}
 	}
 	public void UserPickReturnDate(String returnDate)
 	{				
-		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(returnTextBox));	
-		driver.findElement(returnTextBox).click();
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(datePickerControl));
-		common.SelectADayInDatePicker(returnDate, driver);	 	
+		try 
+		{
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(returnTextBox));	
+			driver.findElement(returnTextBox).click();
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(datePickerControl)); //wait until picker control is located
+			common.SelectADayInDatePicker(returnDate, driver);	 
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch exception " + e);
+		}
 	}
 
 	public void UserClickOnFlightClassComboBox()
 	{
-		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));
-		driver.findElement(businessComboBox).click();
-		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessContainer));	
-		new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfNestedElementLocatedBy(businessContainer, businessContainerLiChilid));
+		try 
+		{
+			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));		
+			driver.findElement(businessComboBox).click();
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessContainer));	
+			new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfNestedElementLocatedBy(businessContainer, businessContainerLiChilid)); // wait until all children in combox box are located
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch exception " + e);
+		}
 	}
 
 	public void UserClickOnPassengerComboBox()
 	{
-		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(passengerComboBox));	
-		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(passengerComboBox));
-		driver.findElement(passengerComboBox).click();	
-
+		try 
+		{
+			//new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(passengerComboBox));	
+			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(passengerComboBox));
+			driver.findElement(passengerComboBox).click();	
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch exception " + e);
+		}
 	}
 
 	public List<String> GetValidationErrors()
@@ -123,9 +143,11 @@ public class FlightHomePage {
 		allErrors.forEach(s -> System.out.println(s));
 		return allErrors;		
 	}
+	
 	/* ** Test methods  ** */
 	public boolean VerifyUserIsPresentFlightTab()
 	{
+		try {
 		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(ulTab));
 		WebElement ul = driver.findElement(ulTab);	
 		WebElement flightTab = ul.findElement(By.tagName("li")).findElement(By.tagName("a"));		
@@ -137,6 +159,12 @@ public class FlightHomePage {
 		}		
 		else
 			return false;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Catch exception " + e);
+			return false;
+		}
 	}
 	public boolean VerifyFlightHomePageTitle()
 	{
@@ -197,9 +225,8 @@ public class FlightHomePage {
 				{
 					System.out.print(webElement.getText() +  " ");
 					System.out.println(webElement.findElement(By.tagName("span")).getText());
-
 				}
-				catch(NoSuchElementException e) // in case span father not containing span children
+				catch(NoSuchElementException e) // in case span father not containing span children, we put space to get expected string
 				{
 					System.out.println(" ");
 				}					

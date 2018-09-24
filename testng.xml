@@ -7,9 +7,9 @@
   <test name="Firefox Test">
  	<parameter name = "browser" value = "firefox"/> 
    		<classes>    
-     		<!--	<class name="cucumber.TestRunner.CucumberRunner"> </class> -->
-    			<class name="pageTests.FlightResultPageTest"></class>
-    		    <class name="pageTests.FlightHomePageTest"></class>
+     			<class name="cucumber.TestRunner.CucumberRunner"> </class> 
+    		<!--	<class name="pageTests.FlightResultPageTest"></class>-->
+    		<!--    <class name="pageTests.FlightHomePageTest"></class>-->
      			<!--  	<methods>
       				<include name="Verify_User_Is_Presented_At_Flight_Tab"></include>
 					<include name="Verify_User_Can_Search_For_Flight"></include>
