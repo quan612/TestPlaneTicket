@@ -59,11 +59,11 @@ deploy:
   on:
     tags: true
     repo: quan612/TestPlaneTicket
-    all_branches: true
-#    branches:    # ← new!
-#      only:      # ← new!
-#        - master # ← new!
+#    all_branches: true
+    branches:    # ← new!
+      only:      # ← new!
+        - master # ← new!
 after_script:
-#  - curl -H"Authorization: deb9f3f25a9e1b5bcb452baba91c3471e7631c4b " https://api.github.com/quan612
+
   - ls /home/travis/build/quan612/TestPlaneTicket
   - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
