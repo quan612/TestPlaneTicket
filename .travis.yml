@@ -58,9 +58,9 @@ deploy:
     tags: true
     repo: quan612/TestPlaneTicket
     all_branches: true
-    branches:
-      only:      # ← new!
-        - master
+#    branches:
+#      only:      # ← new!
+#        - master
 		
 after_script:
 
