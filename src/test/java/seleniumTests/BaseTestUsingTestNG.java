@@ -31,13 +31,13 @@ public class BaseTestUsingTestNG {
 	@Parameters("browser")
 	public void beforeClass(String browser) {
 		System.out.println("Starting web driver! Running test on " + browser);		
-		System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");		
-		//System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
+		//System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");		
+		System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 		//System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");		
 
 		if(browser.equals("firefox"))
 		{
-			System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");						
+			//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");						
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 			firefoxOptions.addPreference("browser.link.open_newwindow", 1); 
 			firefoxOptions.setHeadless(true);
@@ -46,8 +46,8 @@ public class BaseTestUsingTestNG {
 		else if(browser.equals("chrome"))
 		{	
 			//System.setProperty("webdriver.chrome.driver","J:\\Automation 2018\\chromedriver.exe");
-			System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver_2.41.exe");
-			//System.setProperty("webdriver.chrome.driver","chromedriver");
+			//System.setProperty("webdriver.chrome.driver","C:\\Cucumber\\chromedriver_2.41.exe");
+			System.setProperty("webdriver.chrome.driver","chromedriver");
 			ChromeOptions chromeOptions = new ChromeOptions();  
 			//chromeOptions.addArguments("--headless");
 			chromeOptions.addArguments("--no-sandbox");
