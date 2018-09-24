@@ -63,7 +63,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyBusinessClassComboBox());
 	}
 
-	//@Test(description="User can see passenger type before searching for flight")
+	@Test(description="User can see passenger type before searching for flight")
 	public void Verify_User_Can_Select_Different_Passenger_Type() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
