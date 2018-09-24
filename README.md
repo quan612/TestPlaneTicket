@@ -36,8 +36,12 @@ The project follows page object framework design pattern. The page objects class
 The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes.
 
 Markup : <details>
-           <summary>TestNG</summary>
-           <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+           <summary>Execute test with TestNG tags</summary>
+           <p>
+ ```bash
+            TESTTTTT
+ ```
+ </p>
          </details>
 
 ## Acknowledgments
