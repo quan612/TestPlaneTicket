@@ -40,7 +40,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 
 **testng.xml** : <details>
            <summary>Execute test with TestNG tags</summary>
-           <p>
+ <p>
  ```bash
  Specify these class name to have the tests run as testNG
  <class name="pageTests.FlightResultPageTest"></class>
@@ -50,7 +50,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
          </details>
          <details>
            <summary>Execute test with Cucumber feature</summary>
-           <p>
+ <p>
  ```bash
  Specify these class name to have the tests run with Cucumber feature
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
