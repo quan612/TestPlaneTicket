@@ -39,8 +39,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 1. Download the project and extract the folder.
 2. Specify how the tests run.
 
-     **testng.xml**
-
+ **testng.xml**
  *Specify class name to have the tests run with testNG*
  ```bash
  <class name="pageTests.FlightResultPageTest"></class>
@@ -51,7 +50,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  <class name="cucumber.TestRunner.CucumberRunner"></class>  
  ```
  
-      **Maven**
+ **Maven**
  *Executing the tests using Maven command*
   ```bash
  mvn clean
