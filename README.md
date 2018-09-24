@@ -40,6 +40,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 2. Specify how the tests run.
 
  **testng.xml**
+ 
  *Specify class name to have the tests run with testNG*
  ```bash
  <class name="pageTests.FlightResultPageTest"></class>
@@ -51,6 +52,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  ```
  
  **Maven**
+ 
  *Executing the tests using Maven command*
   ```bash
  mvn clean
