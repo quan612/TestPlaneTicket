@@ -33,16 +33,30 @@ The project follows page object framework design pattern. The page objects class
 * [Extent Report 3.1.5](http://extentreports.com/) - Logger
 
 ## Usage 
-The test can be run as TestNG test, using @Test annotations or using Cucumber feature file in which the steps are separated into different classes.
+The test can be run as TestNG test - using @Test annotations or using Cucumber feature file in which the steps are separated into different classes.
 
-Markup : <details>
+1. Download the project and extract the folder.
+2. Specify how the tests run.
+
+**testng.xml** : <details>
            <summary>Execute test with TestNG tags</summary>
            <p>
  ```bash
-            TESTTTTT
+        Specify these class name to have the tests run as testNG
+          <class name="pageTests.FlightResultPageTest"></class>
+    		    <class name="pageTests.FlightHomePageTest"></class>       
  ```
  </p>
          </details>
+         <details>
+           <summary>Execute test with Cucumber feature</summary>
+           <p>
+ ```bash
+        Specify these class name to have the tests run as testNG
+          <class name="cucumber.TestRunner.CucumberRunner">  
+ ```
+ </p>
+         </details> 
 
 ## Acknowledgments
 The project follows guidelines from following:
