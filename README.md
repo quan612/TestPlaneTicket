@@ -39,7 +39,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 
 1. Download the project and extract the folder.
 2. Modify environment.
- **BaseTestUsingTestNG.java**
+ **BaseTestUsingTestNG.java** or **CucumberRunner.java**
  ```bash
  Modify gecko driver path
  Modify Chrome path
@@ -64,7 +64,8 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  *Executing the tests using Maven command*
   ```bash
  mvn clean
- mvn test
+ mvn test -- for TestNG
+ mvn install -- for Cucumber
  ```
 
 ## Issue :x:

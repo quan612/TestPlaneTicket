@@ -42,6 +42,7 @@ public class FlightHomePage {
 	/* ** Public methods  ** */
 	public FlightResultPage UserClickSearchFlightAndGoToFlightResultPage()
 	{			
+
 		try
 		{
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(btnSearchFlight));
@@ -58,6 +59,7 @@ public class FlightHomePage {
 			System.out.println("Catch exception " + e);
 			return null;
 		}
+
 	}
 	public void UserEnterFlightDestination(String destination)
 	{	

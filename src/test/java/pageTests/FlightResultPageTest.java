@@ -52,9 +52,10 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 			flightHomePage.UserEnterFlightDestination(strDestination);
 			flightHomePage.UserPickDepartDate(strDepartDate);
 			flightHomePage.UserPickReturnDate(strReturnDate);			
-			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
-				
+			
+			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();				
 			flightResultPage.WaitForFlightResultPageLoad();
+			
 			flightResultPage.ClickOnShowMoreLinkToSeeMoreAirlineOptions();
 			flightResultPage.SelectPreferAirlineBrand(preferAirline);
 			flightResultPage.WaitForFlightResultWhenSelectingPreferAirline();
