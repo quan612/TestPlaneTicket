@@ -45,29 +45,28 @@ before_script:
   - wget --quiet http://chromedriver.storage.googleapis.com/${CHROME_DRIVER_VER}/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - ls /home/travis/build/quan612/TestPlaneTicket
-#  - "curl -H 'Authorization: token deb9f3f25a9e1b5bcb452baba91c3471e7631c4b' https://api.github.com/quan612"
   
 script: mvn clean install
 
-before_deploy:
-  - zip -r report.zip /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*
-  - ls /home/travis/build/quan612/TestPlaneTicket/
-deploy:
-  provider: releases
-  api_key: ${api_key}
-  file_glob: true
+#before_deploy:
+#  - zip -r report.zip /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*
+#  - ls /home/travis/build/quan612/TestPlaneTicket/
+#deploy:
+#  provider: releases
+#  api_key: ${api_key}
+#  file_glob: true
 # file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
-  file: "/home/travis/build/quan612/TestPlaneTicket/report.zip"
-  keep-history: false
-  skip_cleanup: true
-  on:
-    tags: false
-    repo: quan612/TestPlaneTicket
+#  file: "/home/travis/build/quan612/TestPlaneTicket/report.zip"
+#  keep-history: false
+#  skip_cleanup: true
+#  on:
+#    tags: false
+#    repo: quan612/TestPlaneTicket
 #    all_branches: true
 #    branches:
 #      only:      # ← new!
 #        - master
 
-after_script:
-  - ls /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/
-  - ls /home/travis/build/quan612/TestPlaneTicket/TestReport
+#after_script:
+#  - ls /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/
+#  - ls /home/travis/build/quan612/TestPlaneTicket/TestReport

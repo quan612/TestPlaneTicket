@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="123.707825">
+<testcase classname="User Can search for Flight ticket" name="User is asked to select destination, departure, return date if leaving those fields blank" time="27.788059">
+<system-out><![CDATA[Given the user is on flight home page.......................................passed
+When user clicks on search flight button....................................passed
+Then user is presented with validation errors asking to enter flight information.passed
+]]></system-out>
+</testcase>
+<testcase classname="User Can search for Flight ticket" name="User can see different airline brands after searching for a ticket" time="46.56771">
+<system-out><![CDATA[Given the user is on flight home page.......................................passed
+When user enters flight destination.........................................passed
+And user enters the date he wants to depart.................................passed
+And user enteres the date he wants to return................................passed
+And user clicks on search flight button.....................................passed
+Then user is show all available flight tickets and available airline brand..passed
+]]></system-out>
+</testcase>
+<testcase classname="User Can search for Flight ticket" name="User can see the cheapest ticket for a certain airline brand" time="49.352056">
+<system-out><![CDATA[Given the user is on flight home page.......................................passed
+When user enters flight destination.........................................passed
+And user enters the date he wants to depart.................................passed
+And user enteres the date he wants to return................................passed
+And user clicks on search flight button.....................................passed
+And user select prefer airline brand........................................passed
+Then user can see the cheapest ticket of that airline brand.................passed
+]]></system-out>
+</testcase>
+</testsuite>

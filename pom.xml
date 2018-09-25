@@ -115,7 +115,7 @@
                 </suiteXmlFiles>
             </configuration>
         </plugin>	
-       <!-- 
+        <!--
         <plugin>
 				<groupId>net.masterthought</groupId>
 				<artifactId>maven-cucumber-reporting</artifactId>
@@ -133,8 +133,8 @@
 						</configuration>
 					</execution>
 				</executions>
-		</plugin> --> 	
-			
+		</plugin>  	
+		-->	
 			  
 		     <plugin>
                 <groupId>com.trivago.rta</groupId>
