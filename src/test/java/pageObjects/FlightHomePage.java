@@ -40,7 +40,7 @@ public class FlightHomePage {
 	/* ** Public methods  ** */
 	public FlightResultPage UserClickSearchFlightAndGoToFlightResultPage()
 	{			
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(btnSearchFlight));
+		new WebDriverWait(driver, 25).until(ExpectedConditions.visibilityOfElementLocated(btnSearchFlight));
 		driver.findElement(btnSearchFlight).click();	
 		System.out.println("Click on Search flight button!!!");		 
 		return new FlightResultPage(driver);
