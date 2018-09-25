@@ -13,7 +13,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 //import com.github.mkolisnyk.cucumber.runner.*;
 
 
-/* for mkolisnyk report
+/* ****************************8for mkolisnyk report
 @ExtendedCucumberOptions(jsonReport = "target/cucumber.json"
 						,overviewReport = true
 						,detailedReport = true
@@ -31,7 +31,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		,plugin = {"json:target/cucumber-report/cucumber.json"}
 		,monochrome = true) 
 
-public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTestNGRunner //extends AbstractTestNGCucumberTests  sss
+public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTestNGRunner //extends AbstractTestNGCucumberTests
 {
 	public static WebDriver driver;
 	private TestNGCucumberRunner testRunner;
@@ -55,16 +55,10 @@ public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTes
 		
 		driver = new FirefoxDriver(options);
 		//driver = new ChromeDriver();
-		testRunner = new TestNGCucumberRunner(CucumberRunner.class);			
-<<<<<<< HEAD
+		testRunner = new TestNGCucumberRunner(CucumberRunner.class);
 	}	
 
 	//@Test(description="login",dataProvider="features")
-=======
-	}
-	
-//  /*		
->>>>>>> 835dfdb55bc1d886f474d42cc5a30b2b290d814f
 	@Test(dataProvider="features")
 	public void UserCanSearchForFlightTicket(CucumberFeatureWrapper cFeature)
 	{
