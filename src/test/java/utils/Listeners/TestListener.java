@@ -30,13 +30,18 @@ public class TestListener extends BaseTestUsingTestNG implements ITestListener {
     public synchronized void onTestStart(ITestResult result) {
         System.out.println((result.getMethod().getMethodName() + " started!"));
         ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName(),result.getMethod().getDescription());
+        
+        String category = result.getMethod().getTestClass().getName().toString().replace("pageTests",""); 
+        extentTest.assignCategory(category); // adding test category to Extent report
+        
         test.set(extentTest);
+        
     }
  
     @Override
     public synchronized void onTestSuccess(ITestResult result) {
         System.out.println((result.getMethod().getMethodName() + " passed!"));
-        test.get().pass("Test passed");
+        test.get().pass("Test passed");        
     }
  
     @Override

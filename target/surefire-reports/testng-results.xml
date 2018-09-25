@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="16656" started-at="2018-09-24T19:59:59Z" finished-at="2018-09-24T20:00:16Z">
+    <groups>
+    </groups>
+    <test name="Firefox Test" duration-ms="16656" started-at="2018-09-24T19:59:59Z" finished-at="2018-09-24T20:00:16Z">
+      <class name="cucumber.TestRunner.CucumberRunner">
+        <test-method status="PASS" signature="suiteSetUp()[pri:0, instance:cucumber.TestRunner.CucumberRunner@6b419da]" name="suiteSetUp" is-config="true" duration-ms="7" started-at="2018-09-24T19:59:59Z" finished-at="2018-09-24T19:59:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteSetUp -->
+        <test-method status="PASS" signature="setUP()[pri:0, instance:cucumber.TestRunner.CucumberRunner@6b419da]" name="setUP" is-config="true" duration-ms="4419" started-at="2018-09-24T19:59:59Z" finished-at="2018-09-24T20:00:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method status="PASS" signature="UserCanSearchForFlightTicket(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:cucumber.TestRunner.CucumberRunner@6b419da]" name="UserCanSearchForFlightTicket" duration-ms="9265" started-at="2018-09-24T20:00:04Z" data-provider="features" finished-at="2018-09-24T20:00:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User Can search for Flight ticket]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserCanSearchForFlightTicket -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:cucumber.TestRunner.CucumberRunner@6b419da]" name="tearDown" is-config="true" duration-ms="2632" started-at="2018-09-24T20:00:13Z" finished-at="2018-09-24T20:00:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="suiteTearDown()[pri:0, instance:cucumber.TestRunner.CucumberRunner@6b419da]" name="suiteTearDown" is-config="true" duration-ms="1" started-at="2018-09-24T20:00:19Z" finished-at="2018-09-24T20:00:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suiteTearDown -->
+      </class> <!-- cucumber.TestRunner.CucumberRunner -->
+    </test> <!-- Firefox Test -->
+  </suite> <!-- Suite -->
+</testng-results>

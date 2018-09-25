@@ -10,32 +10,16 @@ import pageObjects.FlightHomePage;
 import seleniumTests.BaseTestUsingTestNG;
 
 public class FlightHomePageTest extends BaseTestUsingTestNG {
-	//WebDriver driver;
+	
 	FlightHomePage flightHomePage;
 	FlightResultPage flightResultPage;
 
-
-	public String strAirlinePrefer = "China Eastern Airlines";
-	//	public FlightHomePageTest(WebDriver driver)
-	//	{
-	//		this.driver = driver;		
-	//		flightHomePage = new FlightHomePage(driver);
-	//		//common = new CommonRepository(driver);
-	//	}
-
-	//	public boolean VerifyFlightHubPageTitle()
-	//	{
-	//		return true;
-	//	}
-	//	
-
-
-	//@Test 123456
+	@Test(description="User is presented at flight tab when go to flight home page.")
 	public void Verify_Page_Title_And_User_Is_Presented_At_Flight_Tab_In_Flight_Home_Page() 
 	{
 		flightHomePage = new FlightHomePage(driver);
-		Assert.assertTrue(flightHomePage.VerifyFlightHomePageTitle(), "Page title is not correct, please recheck!!!");
-		Assert.assertTrue(flightHomePage.VerifyUserIsPresentFlightTab(), "User is not present with flight tab, please recheck!!!");
+		Assert.assertTrue(flightHomePage.VerifyFlightHomePageTitle());
+		Assert.assertTrue(flightHomePage.VerifyUserIsPresentFlightTab());
 	}	
 
 	//@Test(description="User can search for flight after entering destination, depart date, return date")
@@ -51,11 +35,11 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		flightHomePage.UserPickReturnDate(strReturnDate);				
 		flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 		
-		//Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
+		Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
 		//Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText(), "Search cheapest fare text is not exist, please recheck");
-	}
-
-	//@Test(description="User can select different business class before searching for flight")
+	}	
+	
+	@Test(description="User can select different business class before searching for a flight")
 	public void Verify_User_Can_Select_Different_Business_Class() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
@@ -63,7 +47,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyBusinessClassComboBox());
 	}
 
-	@Test(description="User can see passenger type before searching for flight")
+	//@Test(description="User can see passenger type before searching for a flight")
 	public void Verify_User_Can_Select_Different_Passenger_Type() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
@@ -71,7 +55,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyPassengerComboBox());
 	}
 	
-	@Test (description="User will see validation error when clicking on search flight button")
+	//@Test (description="User will see validation errors when clicking on search flight button")
 	public void Verify_User_Is_Present_With_Validation_Errors() 
 	{		
 		flightHomePage = new FlightHomePage(driver);	
