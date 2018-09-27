@@ -1,11 +1,16 @@
 # TestPlaneTicket         [![Build Status](https://travis-ci.com/quan612/TestPlaneTicket.png?branch=master)](https://travis-ci.com/quan612/TestPlaneTicket)
 
-A Simple Selenium project written in Java to demonstrate how I build the test automation in my workplace. 
+A simple Selenium project written in Java to demonstrate how I built the test automation in my workplace. 
 
 ## Introduction 
 
-The project follows page object framework design pattern. The page objects classes contain page elements, methods, actions, test methods for a page. Then there are separated tests - cucumber or testNG, calling to these methods and perform assertions.
+The project follows page object framework design pattern. The page objects classes contain page elements, methods, actions, test methods for a page. Then there are separated test classes- using cucumber step definitions or TestNG annotations, calling these methods and perform assertions.
 
+## Features
++ Page Object framework pattern
++ Using explicit wait to wait for element dynamically
++ Test methods are separated from automation framework
++ All tests are independent.
 
 ## Project structure
  ```bash
@@ -39,7 +44,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
 
 1. Download the project and extract the folder.
 2. Modify environment.
- **BaseTestUsingTestNG.java**
+ **BaseTestUsingTestNG.java** or **CucumberRunner.java**
  ```bash
  Modify gecko driver path
  Modify Chrome path
@@ -68,7 +73,7 @@ The test can be run as TestNG test - using @Test annotations or using Cucumber f
  mvn install -- for Cucumber
  ```
 
-## Issue :x:
+## Issues :x:
 Having issue running the test on Chrome as the browser opens the link on new tab. Adding "setAttribute('target', '_self')" does not solve the issue
 ## Acknowledgments
 The project follows guidelines from the following:

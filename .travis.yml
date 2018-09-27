@@ -48,6 +48,22 @@ before_script:
   
 script: mvn clean install
 
+
+#before_deploy:
+#  - zip report.zip /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*
+#  - ls /home/travis/build/quan612/TestPlaneTicket/
+#deploy:
+#  provider: releases
+#  api_key: ${api_key}
+#  file_glob: true
+# file: "/home/travis/build/quan612/TestPlaneTicket/TestReport/*"
+#  file: "/home/travis/build/quan612/TestPlaneTicket/report.zip"
+#  keep-history: false
+#  skip_cleanup: true
+#  on:
+#    tags: true
+#    repo: quan612/TestPlaneTicket
+
 #before_deploy:
 #  - zip -r report.zip /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/*
 #  - ls /home/travis/build/quan612/TestPlaneTicket/
@@ -63,9 +79,6 @@ script: mvn clean install
 #    tags: false
 #    repo: quan612/TestPlaneTicket
 #    all_branches: true
-#    branches:
-#      only:      # ← new!
-#        - master
 
 #after_script:
 #  - ls /home/travis/build/quan612/TestPlaneTicket/target/cluecumber-report/

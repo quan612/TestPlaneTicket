@@ -13,7 +13,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 //import com.github.mkolisnyk.cucumber.runner.*;
 
 
-/* for mkolisnyk report
+/* ****************************8for mkolisnyk report
 @ExtendedCucumberOptions(jsonReport = "target/cucumber.json"
 						,overviewReport = true
 						,detailedReport = true
@@ -31,7 +31,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		,plugin = {"json:target/cucumber-report/cucumber.json"}
 		,monochrome = true) 
 
-public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTestNGRunner //extends AbstractTestNGCucumberTests  sss
+public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTestNGRunner //extends AbstractTestNGCucumberTests
 {
 	public static WebDriver driver;
 	private TestNGCucumberRunner testRunner;
@@ -47,17 +47,18 @@ public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTes
 		System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 		//System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");	
 		
-		//driver = new ChromeDriver();
+		
 		//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");		
 		FirefoxOptions options = new FirefoxOptions();
 		options.addPreference("browser.link.open_newwindow", 1); 
 		options.setHeadless(true);
 		
 		driver = new FirefoxDriver(options);
-		testRunner = new TestNGCucumberRunner(CucumberRunner.class);			
-	}
-	
-//  /*		
+		//driver = new ChromeDriver();
+		testRunner = new TestNGCucumberRunner(CucumberRunner.class);
+	}	
+
+	//@Test(description="login",dataProvider="features")
 	@Test(dataProvider="features")
 	public void UserCanSearchForFlightTicket(CucumberFeatureWrapper cFeature)
 	{
@@ -69,7 +70,7 @@ public class CucumberRunner //extends ExtendedTestNGRunner //extends ExtendedTes
 	{
 		return testRunner.provideFeatures();
 	}	
-//	*/
+
 	
 	@AfterTest
 	//@AfterMethod

@@ -5,7 +5,6 @@ import java.util.List;
 import org.testng.Assert;
 import cucumber.TestRunner.CucumberRunner;
 
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
@@ -64,7 +63,7 @@ public class FlightHomePageSteps  extends CucumberRunner {
 		flightResultPage.GetAllAirlineBrandsName();
     }
 
-    @When("^user select prefer airline brand$")
+    @When("^user selects a prefer airline brand$")
     public void user_select_prefer_airline_brand() throws Throwable {
     	String preferAirline = "China Eastern Airlines";
     	flightResultPage.ClickOnShowMoreLinkToSeeMoreAirlineOptions();
