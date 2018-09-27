@@ -41,17 +41,16 @@ public class FlightHomePage {
 
 	/* ** Public methods  ** */
 	public FlightResultPage UserClickSearchFlightAndGoToFlightResultPage()
-	{			
-
+	{	
 		try
 		{
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(btnSearchFlight));
+			common.ExplicitWaitVisibilityOfElementLocated(btnSearchFlight);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("document.getElementById('btn-search-flight').setAttribute('target', '_self')"); // to force the transition to new page is performed on the same tab, instead to a new tab
 			System.out.println(driver.findElement(btnSearchFlight).getAttribute("target"));	
 			
 			driver.findElement(btnSearchFlight).click();	
-			System.out.println("Click on Search flight button!!!");		 
+			System.out.println("Clicked on Search flight button!!!");		 
 			return new FlightResultPage(driver);
 		}
 		catch(Exception e)
@@ -65,7 +64,7 @@ public class FlightHomePage {
 	{	
 		try
 		{
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(toDestinationTxtBox));					
+			common.ExplicitWaitVisibilityOfElementLocated(toDestinationTxtBox);
 			new Actions(driver).moveToElement(driver.findElement(toDestinationTxtBox)).click().perform();
 			driver.findElement(toDestinationTxtBox).sendKeys(destination);		
 			driver.findElement(toDestinationTxtBox).sendKeys(Keys.TAB);		
@@ -79,9 +78,9 @@ public class FlightHomePage {
 	{		
 		try 
 		{
-			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(departTextBox));
+			common.ExplicitWaitVisibilityOfElementLocated(departTextBox);
 			driver.findElement(departTextBox).click();
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(datePickerControl)); //wait until picker control is located
+			common.ExplicitWaitVisibilityOfElementLocated(datePickerControl);//wait until picker control is located
 			common.SelectADayInDatePicker(departDate, driver);		
 		}
 		catch(Exception e)
@@ -93,9 +92,9 @@ public class FlightHomePage {
 	{				
 		try 
 		{
-			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(returnTextBox));	
-			driver.findElement(returnTextBox).click();
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(datePickerControl)); //wait until picker control is located
+			common.ExplicitWaitVisibilityOfElementLocated(returnTextBox);
+			driver.findElement(returnTextBox).click();			
+			common.ExplicitWaitVisibilityOfElementLocated(datePickerControl);//wait until picker control is located
 			common.SelectADayInDatePicker(returnDate, driver);	 
 		}
 		catch(Exception e)
@@ -108,9 +107,9 @@ public class FlightHomePage {
 	{
 		try 
 		{
-			new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(businessComboBox));		
+			common.ExplicitWaitVisibilityOfElementLocated(businessComboBox);
 			driver.findElement(businessComboBox).click();
-			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(businessContainer));	
+			common.ExplicitWaitVisibilityOfElementLocated(businessContainer); //wait until the container contains all combobox items loaded
 			new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfNestedElementLocatedBy(businessContainer, businessContainerLiChilid)); // wait until all children in combox box are located
 		}
 		catch(Exception e)
@@ -150,17 +149,18 @@ public class FlightHomePage {
 	public boolean VerifyUserIsPresentFlightTab()
 	{
 		try {
-		new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(ulTab));
-		WebElement ul = driver.findElement(ulTab);	
-		WebElement flightTab = ul.findElement(By.tagName("li")).findElement(By.tagName("a"));		
-		if(flightTab.getAttribute("id").equals("search_type_flights")
-				&& flightTab.getAttribute("class").equals("active"))
-		{	
-			System.out.println("Flight tab is in active state!!!");
-			return true;
-		}		
-		else
-			return false;
+				common.ExplicitWaitVisibilityOfElementLocated(ulTab);
+				WebElement ul = driver.findElement(ulTab);	
+				WebElement flightTab = ul.findElement(By.tagName("li")).findElement(By.tagName("a"));	
+				
+				if(flightTab.getAttribute("id").equals("search_type_flights")
+						&& flightTab.getAttribute("class").equals("active"))
+				{	
+					System.out.println("Flight tab is in active state!!!");
+					return true;
+				}		
+				else
+					return false;
 		}
 		catch(Exception e)
 		{

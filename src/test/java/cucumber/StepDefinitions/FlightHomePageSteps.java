@@ -18,6 +18,7 @@ public class FlightHomePageSteps  extends CucumberRunner {
 	String strDestination = "Ho Chi Minh City, Vietnam - Tan Son Nhat International [SGN]";
 	String strDepartDate = "15/11/2018";
 	String strReturnDate = "16/12/2018";	
+	String preferAirline = "China Eastern Airlines";
 	
 	@Given("^the user is on flight home page$")
 	public void the_user_is_on_flight_home_page() throws Throwable {
@@ -64,8 +65,7 @@ public class FlightHomePageSteps  extends CucumberRunner {
     }
 
     @When("^user selects a prefer airline brand$")
-    public void user_select_prefer_airline_brand() throws Throwable {
-    	String preferAirline = "China Eastern Airlines";
+    public void user_select_prefer_airline_brand() throws Throwable {    	
     	flightResultPage.ClickOnShowMoreLinkToSeeMoreAirlineOptions();
 		flightResultPage.SelectPreferAirlineBrand(preferAirline);
 		flightResultPage.WaitForFlightResultWhenSelectingPreferAirline();			

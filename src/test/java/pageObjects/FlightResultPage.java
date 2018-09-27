@@ -39,7 +39,6 @@ public class FlightResultPage {
 		common = new CommonRepository(driver);		
 	}	
 
-
 	/* ** Public methods ** */	
 	public void WaitForFlightResultPageLoad() //done
 	{
@@ -49,7 +48,7 @@ public class FlightResultPage {
 			WebElement progressBar = driver.findElement(progressSearchBar);			
 			while(progressBar.getCssValue("display").contains("block"))
 			{				
-				//waiting				
+				//waiting	for load			
 			}
 			if(progressBar.getCssValue("display").contains("none"))
 			{
@@ -64,45 +63,31 @@ public class FlightResultPage {
 
 	public void GetAllPriceInFlightResultDetail() //no
 	{
-		//WebElement divFarePackageList = driver.findElement(flightSearchResult);
-		//System.out.println("test valid " + divFarePackageList.isDisplayed());
-		//Thread.sleep(2000);
-		//new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(divFarePackageList.findElement(By.tagName("ul"))));
-		//System.out.println("test valid " + divFarePackageList.findElements(By.tagName("ul")).size());
-		//WebElement ulPackageOsExtension = divFarePackageList.findElement(By.tagName("ul"));
-		common.ExplicitWaitForElement(flightSearchResult);
+		common.ExplicitWaitVisibilityOfElementLocated(flightSearchResult);
 		WebElement ulPackageOsExtension = driver.findElement(flightSearchResult);		
 		List<WebElement> liListAllFlightDetail = ulPackageOsExtension.findElements(By.cssSelector("li[data-package-list='one-step']"));
 		//List<WebElement> test2 = ulPackageOsExtension.findElements(By.xpath(".//li[@data-package-list='one-step']"));
-		//System.out.println("li size1 " + liListAllFlightDetail.size());
 		
 		getPricesFromPackageList(liListAllFlightDetail);
 	}
 
 
 	/* ** flight result left side bar ** */
-	public void VerifyAirlineFilterControl()
-	{
-		// there is a left side bar showing all available airline
-	}
-
 	public void ClickOnShowMoreLinkToSeeMoreAirlineOptions() //ok
 	{
 		try 
 		{
-			System.out.println("Wait show more link");
-			//common.ExplicitWaitForElement(leftSideBarShowMoreLink);
-			//new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(leftSideBarShowMoreLink));
+			System.out.println("Wait show more link");						
+			common.ExplicitWaitVisibilityOfElementLocated(leftSideBarShowMoreLink);
 			WebElement leftSideBarShowMoreControl = driver.findElement(leftSideBarShowMoreLink);
 			if(leftSideBarShowMoreControl.isDisplayed())				
 				leftSideBarShowMoreControl.click();
 			else
 				//new Exception("Cannot click on show more link tag");
-				System.out.println("No show more link ");
+				System.out.println("There is no show more link ");
 		} 
 		catch (NoSuchElementException e) {
 			System.out.println("No show more link " + e);
-
 		}
 		catch (Exception e) {
 			System.out.println("Exception is " + e);
@@ -114,11 +99,10 @@ public class FlightResultPage {
 	{
 		try {
 			System.out.println("Clicking on select all check box");
-			common.ExplicitWaitForElement(leftSideBarSelectAllCheckBox);			
+			common.ExplicitWaitVisibilityOfElementLocated(leftSideBarSelectAllCheckBox);			
 			WebElement leftSideBarSelectAllCheckBoxControl = driver.findElement(leftSideBarSelectAllCheckBox);
 			if(leftSideBarSelectAllCheckBoxControl.isDisplayed())			
 				leftSideBarSelectAllCheckBoxControl.click();
-
 		} 
 		catch (Exception e) {
 			System.out.println("Exception is " + e);
@@ -129,12 +113,11 @@ public class FlightResultPage {
 	{
 		//Actions action = new Actions(driver);
 		System.out.println("Selecting a prefer airline brand" + strAirlineBrand);
-		common.ExplicitWaitForElement(leftSideBarAllAirlineBrands);
+		common.ExplicitWaitVisibilityOfElementLocated(leftSideBarAllAirlineBrands);
 		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);		
 		List<WebElement> airlineBrands = leftSideBarAirlineBrandsControl.findElements(By.tagName("li"));
 
-		// clicking on prefer airline brand
-		//int i = 1;
+		// clicking on prefer airline brand		
 		airlineBrands.remove(0); //remove the first li because it contains select all text but not the airline brand
 					
 		for (WebElement liParents : airlineBrands) {	
@@ -190,7 +173,6 @@ public class FlightResultPage {
 
 
 	/* ** flight result private method ** */
-
 	private void getPricesFromPackageList(List<WebElement> list) 
 	{
 		try
@@ -203,8 +185,7 @@ public class FlightResultPage {
 			String combinePrice = "";
 			for (WebElement listChild : list) 
 			{		
-				divPackageOSTop.add(listChild.findElement(flightPriceWrap));
-				//System.out.println("test 1  ");
+				divPackageOSTop.add(listChild.findElement(flightPriceWrap));				
 			}
 
 			for (WebElement listChild2 : divPackageOSTop) {
@@ -303,7 +284,7 @@ public class FlightResultPage {
 	}
 	public boolean VerifyListOfAirlineBrandsExist()
 	{
-		common.ExplicitWaitForElement(leftSideBarAllAirlineBrands);
+		common.ExplicitWaitVisibilityOfElementLocated(leftSideBarAllAirlineBrands);
 		WebElement leftSideBarAirlineBrandsControl = driver.findElement(leftSideBarAllAirlineBrands);
 		if(leftSideBarAirlineBrandsControl.isDisplayed()
 				&& leftSideBarAirlineBrandsControl.findElements(By.tagName("li")).size() > 0 )
@@ -313,6 +294,5 @@ public class FlightResultPage {
 		}
 		else
 			return false;
-
 	}
 }

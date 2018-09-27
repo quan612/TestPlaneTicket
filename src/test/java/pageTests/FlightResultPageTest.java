@@ -25,8 +25,7 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 			flightHomePage.UserPickReturnDate(strReturnDate);					
 			flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();			
 			
-			Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist());
-			//Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText());		
+			Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist());					
 			Assert.assertTrue(flightResultPage.VerifySearchProgessBarExist());					
 	}
 	
@@ -61,5 +60,4 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 			flightResultPage.WaitForFlightResultWhenSelectingPreferAirline();
 			flightResultPage.GetAllPriceInFlightResultDetail();
 	}
-
 }

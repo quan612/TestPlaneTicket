@@ -28,7 +28,7 @@ public class CommonRepository {
         }
     }
 	
-	public void ExplicitWaitForElement(By el)
+	public void ExplicitWaitVisibilityOfElementLocated(By el)
 	{
 		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(el));
 	}
