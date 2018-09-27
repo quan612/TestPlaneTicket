@@ -4,8 +4,13 @@ A simple Selenium project written in Java to demonstrate how I built the test au
 
 ## Introduction 
 
-The project follows page object framework design pattern. The page objects classes contain page elements, methods, actions, test methods for a page. Then there are separated tests - cucumber or TestNG, calling these methods and perform assertions.
+The project follows page object framework design pattern. The page objects classes contain page elements, methods, actions, test methods for a page. Then there are separated test classes- using cucumber step definitions or TestNG annotations, calling these methods and perform assertions.
 
+## Features
++ Page Object framework pattern
++ Using explicit wait to wait for element dynamically
++ Test methods are separated from automation framework
++ All tests are independent.
 
 ## Project structure
  ```bash
