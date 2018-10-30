@@ -30,27 +30,29 @@ public class CommonRepository {
 	
 	public void ExplicitWaitVisibilityOfElementLocated(By el)
 	{
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(el));
+		new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(el));
+		System.out.println("wait");	
 	}
 	
 	public void SelectADayInDatePicker(String date, WebDriver driver)
 	{
 		try
-		{
-			
-			By byLeftTableTitle = By.className("ui-datepicker-title");
-			By byFromMonth = By.className("ui-datepicker-month");
-			By byFromYear = By.className("ui-datepicker-year");
+		{			
+			By byCalendarArrow = By.cssSelector("a[data-handler='next']");	
+			By byCalendarBody = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first'] >  table[class='ui-datepicker-calendar'] > tbody");					
+			By byLeftTable = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first']");
+									
+			WebElement calendarArrow;	
+			WebElement dpLeftTable = driver.findElement(byLeftTable);		
+			WebElement dpLeftTitle = dpLeftTable.findElement(By.className("ui-datepicker-title"));
+			WebElement dpFromMonth = dpLeftTitle.findElement(By.className("ui-datepicker-month"));
+			WebElement dpFromYear = dpLeftTitle.findElement(By.className("ui-datepicker-year"));			
 			
 			System.out.println("Trying to pick the date in Date picker control " + date);
-			//WebElement dpLeftTable = driver.findElement(By.className("ui-datepicker-group ui-datepicker-group-first"));
-			WebElement calendarArrow;	
-			WebElement dpLeftTable = driver.findElement(By.xpath("//div[@id='datepicker']/div[1]/div[@class='ui-datepicker-group ui-datepicker-group-first']"));		
-			WebElement dpLeftTitle = dpLeftTable.findElement(byLeftTableTitle);
-			WebElement dpFromMonth = dpLeftTitle.findElement(byFromMonth);
-			WebElement dpFromYear = dpLeftTitle.findElement(byFromYear);
-			
-			//This is the expected date, to be compared with the date in the website
+			System.out.println("Current Calendar month is " + dpFromMonth.getText());
+			System.out.println("Current Calendar year is " + dpFromYear.getText());
+
+			//This is the expected date, to be compared with the date in the web site
 			SimpleDateFormat parseDate = new SimpleDateFormat("dd/MM/yyyy");			
 			Date temporary = parseDate.parse(date);
 			Calendar c = Calendar.getInstance();
@@ -64,31 +66,34 @@ public class CommonRepository {
 			System.out.println("Expected month is "  + (expectedMonth));
 			System.out.println("Expected year is "  + expectedYear); 
 
-			// loop to find match in month and year			 
+			// loop to find match month and year			 
 			// == cannot be used to compare string, == mean having the same memory storing location
 			while(!dpFromMonth.getText().equals(String.valueOf(expectedMonth)) || !dpFromYear.getText().equals(String.valueOf(expectedYear))) 
 			{
+				//System.out.println("Actual Calendar month is " + dpFromMonth.getAttribute("innerText"));
 				//loop clicking arrow
-				calendarArrow = driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']/div[1]/a"));
-				Thread.sleep(200);
+				calendarArrow = driver.findElement(byCalendarArrow);				
 				calendarArrow.click();
+				
 				//find the whole calendar month and year again, the date picker element is stale / reset
-				dpLeftTable = driver.findElement(By.xpath("//div[@id='datepicker']/div[1]/div[@class='ui-datepicker-group ui-datepicker-group-first']"));	
-				dpLeftTitle = dpLeftTable.findElement(byLeftTableTitle);
-				dpFromYear = dpLeftTitle.findElement(byFromMonth);
-				dpFromMonth = dpLeftTitle.findElement(byFromYear);		 
+				dpLeftTable = driver.findElement(byLeftTable);	
+				dpLeftTitle = dpLeftTable.findElement(By.className("ui-datepicker-title"));
+				dpFromYear = dpLeftTitle.findElement(By.className("ui-datepicker-year"));
+				dpFromMonth = dpLeftTitle.findElement(By.className("ui-datepicker-month"));		 
 			}  
 			
 			// click to select the date
-			WebElement calendarBody = driver.findElement(By.xpath("//div[@id='datepicker']/div[1]/div[@class='ui-datepicker-group ui-datepicker-group-first']/table/tbody"));
+			WebElement calendarBody = driver.findElement(byCalendarBody);		
+			
 			List<WebElement> rowToBeSelected = calendarBody.findElements(By.tagName("tr"));
 			//System.out.println("Count test "  + rowToBeSelected.size()); 
 			List<WebElement> days;
 			WebElement dayTobeClicked = null;
+			
 			int i = 0;
-			for (WebElement temp : rowToBeSelected) {
+			for (WebElement temp : rowToBeSelected) {    // 5 rows
 				days = temp.findElements(By.tagName("a"));
-				for (WebElement temp2 : days) {
+				for (WebElement temp2 : days) {          // day within rows
 					 if(temp2.getText().equals(String.valueOf(expectedDay))) 
 					 {
 						 dayTobeClicked = temp2;
@@ -99,8 +104,7 @@ public class CommonRepository {
 				if(i == 1)
 					break;
 			}
-			dayTobeClicked.click();
-			
+			dayTobeClicked.click();		
 		}
 		catch(Exception e)
 		{

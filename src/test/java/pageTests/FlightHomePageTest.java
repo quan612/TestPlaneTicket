@@ -14,7 +14,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 	FlightHomePage flightHomePage;
 	FlightResultPage flightResultPage;
 
-	@Test(description="User is presented at flight tab when go to flight home page.")
+	//@Test(description="User is presented at flight tab when go to flight home page.")
 	public void Verify_Page_Title_And_User_Is_Presented_At_Flight_Tab_In_Flight_Home_Page() 
 	{
 		flightHomePage = new FlightHomePage(driver);
@@ -22,7 +22,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyUserIsPresentFlightTab());
 	}	
 
-	//@Test(description="User can search for flight after entering destination, depart date, return date")
+	@Test(description="User can search for flight after entering destination, depart date, return date")
 	public void Verify_User_Can_Search_For_Flight() 
 	{
 		String strDestination = "Ho Chi Minh City, Vietnam - Tan Son Nhat International [SGN]";
@@ -33,13 +33,13 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		flightHomePage.UserEnterFlightDestination(strDestination);
 		flightHomePage.UserPickDepartDate(strDepartDate);
 		flightHomePage.UserPickReturnDate(strReturnDate);				
-		flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
+		//flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 		
-		Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
+		//Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
 		//Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText(), "Search cheapest fare text is not exist, please recheck");
 	}	
 	
-	@Test(description="User can select different business class before searching for a flight")
+	//@Test(description="User can select different business class before searching for a flight")
 	public void Verify_User_Can_Select_Different_Business_Class() 
 	{
 		flightHomePage = new FlightHomePage(driver);	

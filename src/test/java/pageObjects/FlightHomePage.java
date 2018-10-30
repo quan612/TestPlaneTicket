@@ -17,8 +17,10 @@ public class FlightHomePage {
 
 	By toDestinationTxtBox = By.xpath("//div['fields-row clearfix container-home-search-from']/div[2]/div[2]/input[1]");
 	By datePickerControl = By.id("datepicker");
-	By departTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[1]/div[2]");
+	
+	By departInput = By.cssSelector("div[class='hp-search-date-left  seg0_date_wrap'] > div[class='hp-field-cell'] > input[class='search-calendar']");	
 	By returnTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[2]/div[2]");
+	
 	By btnSearchFlight = By.id("btn-search-flight");
 	By businessComboBox = By.id("class_select");
 	By businessContainer = By.id("home-class-dropdown");
@@ -77,10 +79,10 @@ public class FlightHomePage {
 	public void UserPickDepartDate(String departDate)
 	{		
 		try 
-		{
-			common.ExplicitWaitVisibilityOfElementLocated(departTextBox);
-			driver.findElement(departTextBox).click();
-			common.ExplicitWaitVisibilityOfElementLocated(datePickerControl);//wait until picker control is located
+		{			
+			common.ExplicitWaitVisibilityOfElementLocated(departInput);						
+			driver.findElement(departInput).click();			
+			common.ExplicitWaitVisibilityOfElementLocated(datePickerControl);//wait until picker control is located			
 			common.SelectADayInDatePicker(departDate, driver);		
 		}
 		catch(Exception e)
