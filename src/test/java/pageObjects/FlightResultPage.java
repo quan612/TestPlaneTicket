@@ -12,7 +12,6 @@ import seleniumTests.CommonRepository;
 
 public class FlightResultPage {
 	WebDriver driver;
-
 	CommonRepository common;
 
 	// search fare model dialog
@@ -21,10 +20,10 @@ public class FlightResultPage {
 
 	// flight result page left side bar
 	By leftSideBarContent = By.id("sidebar-content");
-	By leftSideBarShowMoreLink = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/div/a/span");
-	By leftSideBarSelectAllCheckBox = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/ul/li[1]/input");
-	By leftSideBarAllAirlineBrands = By.xpath("//div[@id='sidebar-content']/div[@id='myContent']/div[@class='container-filter-wrap clearfix']/div/div[@class='container-filter airlines-filter']/div[@class='filter-content']/ul");
-
+	By leftSideBarShowMoreLink = By.cssSelector("a[class='pointer more-airlines slide-toggle-button collapsed'] > span[class='show-when-collapsed']");
+	By leftSideBarSelectAllCheckBox = By.cssSelector("input[id='checkboxSelectAllAirlines']");
+	By leftSideBarAllAirlineBrands = By.xpath("//div[@class='container-filter airlines-filter']/div[@class='filter-content']/ul");
+	
 	// flight result page center
 	By flightResultWrap = By.className("flights-results-wrap");
 	By progressSearchBar = By.id("fares-search-progress-bar");	

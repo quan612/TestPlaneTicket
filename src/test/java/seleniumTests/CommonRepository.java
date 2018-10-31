@@ -34,6 +34,12 @@ public class CommonRepository {
 		System.out.println("wait");	
 	}
 	
+	
+	/*
+	 * The method will select the date on the date picker control.
+	 * It keeps clicking on the arrow until it finds a year that matches, then month, then day.	 * 
+	 * 
+	 */
 	public void SelectADayInDatePicker(String date, WebDriver driver)
 	{
 		try

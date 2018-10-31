@@ -15,11 +15,11 @@ public class FlightHomePage {
 	CommonRepository common;
 	FlightResultPage flightResultPage;
 
-	By toDestinationTxtBox = By.xpath("//div['fields-row clearfix container-home-search-from']/div[2]/div[2]/input[1]");
+	By toTextBox = By.cssSelector("input[placeholder='Going to'][tabindex='2']");
 	By datePickerControl = By.id("datepicker");
 	
-	By departInput = By.cssSelector("div[class='hp-search-date-left  seg0_date_wrap'] > div[class='hp-field-cell'] > input[class='search-calendar']");	
-	By returnTextBox = By.xpath("//div[@class='main_search_fares_form']/div[2]/div/div[3]/div[2]/div[2]");
+	By departTextbox = By.cssSelector("div[data-locale-departure='Depart']");		
+	By returnTextBox = By.cssSelector("div[data-locale-return='Pick a Date']");
 	
 	By btnSearchFlight = By.id("btn-search-flight");
 	By businessComboBox = By.id("class_select");
@@ -66,10 +66,11 @@ public class FlightHomePage {
 	{	
 		try
 		{
-			common.ExplicitWaitVisibilityOfElementLocated(toDestinationTxtBox);
-			new Actions(driver).moveToElement(driver.findElement(toDestinationTxtBox)).click().perform();
-			driver.findElement(toDestinationTxtBox).sendKeys(destination);		
-			driver.findElement(toDestinationTxtBox).sendKeys(Keys.TAB);		
+			common.ExplicitWaitVisibilityOfElementLocated(toTextBox);
+		//	new Actions(driver).moveToElement(driver.findElement(toTextBox)).click().perform();
+			driver.findElement(toTextBox).click();
+			driver.findElement(toTextBox).sendKeys(destination);		
+			driver.findElement(toTextBox).sendKeys(Keys.TAB);		
 		}
 		catch(Exception e)
 		{
@@ -80,8 +81,8 @@ public class FlightHomePage {
 	{		
 		try 
 		{			
-			common.ExplicitWaitVisibilityOfElementLocated(departInput);						
-			driver.findElement(departInput).click();			
+			common.ExplicitWaitVisibilityOfElementLocated(departTextbox);						
+			driver.findElement(departTextbox).click();			
 			common.ExplicitWaitVisibilityOfElementLocated(datePickerControl);//wait until picker control is located			
 			common.SelectADayInDatePicker(departDate, driver);		
 		}

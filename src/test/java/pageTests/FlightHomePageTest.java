@@ -33,13 +33,13 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		flightHomePage.UserEnterFlightDestination(strDestination);
 		flightHomePage.UserPickDepartDate(strDepartDate);
 		flightHomePage.UserPickReturnDate(strReturnDate);				
-		//flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
+		flightResultPage = flightHomePage.UserClickSearchFlightAndGoToFlightResultPage();	
 		
-		//Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
-		//Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText(), "Search cheapest fare text is not exist, please recheck");
+		Assert.assertTrue(flightResultPage.VerifySearchFareModalDialogExist(), "Search modal dialog is not exist, please recheck");
+		Assert.assertTrue(flightResultPage.VerifySearchCheapestFaresText(), "Search cheapest fare text is not exist, please recheck");
 	}	
 	
-	//@Test(description="User can select different business class before searching for a flight")
+	@Test(description="User can select different business class before searching for a flight")
 	public void Verify_User_Can_Select_Different_Business_Class() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
@@ -47,7 +47,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyBusinessClassComboBox());
 	}
 
-	//@Test(description="User can see passenger type before searching for a flight")
+	@Test(description="User can see passenger type before searching for a flight")
 	public void Verify_User_Can_Select_Different_Passenger_Type() 
 	{
 		flightHomePage = new FlightHomePage(driver);	
@@ -55,7 +55,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 		Assert.assertTrue(flightHomePage.VerifyPassengerComboBox());
 	}
 	
-	//@Test (description="User will see validation errors when clicking on search flight button")
+	@Test (description="User will see validation errors when clicking on search flight button")
 	public void Verify_User_Is_Present_With_Validation_Errors() 
 	{		
 		flightHomePage = new FlightHomePage(driver);	

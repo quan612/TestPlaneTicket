@@ -16,7 +16,7 @@ public class FlightResultPageTest extends BaseTestUsingTestNG{
 	String strReturnDate = "16/12/2018";
 	String preferAirline = "China Eastern Airlines";
 	
-	@Test(description="User can see a progress bar when ticket being searched")
+	//@Test(description="User can see a progress bar when ticket being searched")
 	public void Verify_There_Is_A_Progess_Bar_When_Ticket_Is_Being_Searched()
 	{				
 			flightHomePage = new FlightHomePage(driver);			

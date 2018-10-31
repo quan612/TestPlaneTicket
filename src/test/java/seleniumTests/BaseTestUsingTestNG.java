@@ -30,15 +30,15 @@ public class BaseTestUsingTestNG {
 	@BeforeMethod
 	@Parameters("browser")
 	public void beforeClass(String browser) {
-				//System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
+				System.setProperty("webdriver.gecko.driver","geckodriver/geckodriver");
 				//System.setProperty("webdriver.gecko.driver","J:\\Automation 2018\\geckodriver.exe");		
-
+				//System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");	
 		
 		System.out.println("Starting web driver! Running test on " + browser);		
-		System.setProperty("webdriver.gecko.driver","C:\\Cucumber\\geckodriver.exe");	
+		
 		if(browser.equals("firefox"))
 		{
-			System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");						
+			//System.setProperty("webdriver.firefox.bin","C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");						
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 			firefoxOptions.addPreference("browser.link.open_newwindow", 1); 
 			//firefoxOptions.setHeadless(true);
