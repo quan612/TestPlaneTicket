@@ -7,15 +7,15 @@
   <test name="Firefox Test">
  	<parameter name = "browser" value = "firefox"/> 
    		<classes>    
-     		<!--<class name="cucumber.TestRunner.CucumberRunner"> </class> -->    		
-    		    <class name="pageTests.FlightHomePageTest"></class>
-     			<!--  	<methods>
-      				<include name="Verify_User_Is_Presented_At_Flight_Tab"></include>
-					<include name="Verify_User_Can_Search_For_Flight"></include>
-				</methods> -->     			 
+     		<!--<class name="cucumber.TestRunner.CucumberRunner"></class>-->    		
+    		    <class name="pageTests.FlightHomePageTest">
+     				<methods>
+      					<!--<include name="Verify_User_Is_Presented_At_Flight_Tab"></include>-->
+      					<include name="TestDatePicker"></include>
+					</methods>
+				</class>     			 
    		</classes>
-  </test>   
-     
+  </test>        
   	<!--<test name="Chrome Test">
   			<parameter name = "browser" value = "chrome"/>
    				<classes>         			

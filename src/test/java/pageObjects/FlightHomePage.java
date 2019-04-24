@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
+//import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -81,7 +81,8 @@ public class FlightHomePage {
 	{		
 		try 
 		{			
-			common.ExplicitWaitVisibilityOfElementLocated(departTextbox);						
+			common.ExplicitWaitVisibilityOfElementLocated(departTextbox);
+			Thread.sleep(2000);
 			driver.findElement(departTextbox).click();			
 			common.ExplicitWaitVisibilityOfElementLocated(datePickerControl);//wait until picker control is located			
 			common.SelectADayInDatePicker(departDate, driver);		

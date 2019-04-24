@@ -66,4 +66,24 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
         Assert.assertEquals(results.get(1), "Please select a departure date.");
         Assert.assertEquals(results.get(2), "Please select a return date.");
 	}
+
+	@Test(description="User can search choose a depart and return date for the flight")
+	public void TestDatePicker()
+	{
+		String strDestination = "Ho Chi Minh City, Vietnam - Tan Son Nhat International [SGN]";
+		String strDepartDate = "15/4/2020";
+		String strReturnDate = "16/4/2020";
+
+		flightHomePage = new FlightHomePage(driver);
+		flightHomePage.UserEnterFlightDestination(strDestination);
+		flightHomePage.UserPickDepartDate(strDepartDate);
+		flightHomePage.UserPickReturnDate(strReturnDate);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }
