@@ -71,7 +71,7 @@ public class FlightHomePageTest extends BaseTestUsingTestNG {
 	public void TestDatePicker()
 	{
 		String strDestination = "Ho Chi Minh City, Vietnam - Tan Son Nhat International [SGN]";
-		String strDepartDate = "15/4/2020";
+		String strDepartDate = "24/4/2019";
 		String strReturnDate = "16/4/2020";
 
 		flightHomePage = new FlightHomePage(driver);

@@ -46,40 +46,17 @@ public class CommonRepository {
 		try
 		{			
 			By byCalendarArrow = By.cssSelector("a[data-handler='next']");	
-			By byCalendarBody; 				
-			By byLeftTable = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first']");
-			By byRightTable = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-last']");						
-			By byTable;	
+			By byLeftTable = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first']");							
+			By byCalendarBody = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first'] >  table[class='ui-datepicker-calendar'] > tbody");	
 			
 			System.out.println("date " + date);
 			
 			String expectedDay = GetDayFromDate(date);
 			String expectedMonth = GetMonthFromDate(date);
-			String expectedYear = GetYearFromDate(date); 
-			
-			Boolean isCurrentYear = IsTheDateInCurrentYear(date);
-			Boolean isCurrentMonth = IsTheDateInCurrentMonth(date);
-			
-			System.out.println("Is Current year " + isCurrentYear);
-			System.out.println("Is Current month " + isCurrentMonth);
-			
-			byTable = byLeftTable;
-			byCalendarBody = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first'] >  table[class='ui-datepicker-calendar'] > tbody");	
-			
-//			if(isCurrentYear || (!isCurrentYear && !isCurrentMonth))
-//			{
-//				byTable = byLeftTable;
-//				byCalendarBody = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-first'] >  table[class='ui-datepicker-calendar'] > tbody");	
-//			}
-//			else 
-//			{
-//				System.out.println("not current year, but in same month ");
-//				byTable = byRightTable;
-//				byCalendarBody = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-last'] >  table[class='ui-datepicker-calendar'] > tbody");	
-//			}			
-			
+			String expectedYear = GetYearFromDate(date); 		
+						
 			WebElement calendarArrow;	
-			WebElement dpTable = driver.findElement(byTable);		
+			WebElement dpTable = driver.findElement(byLeftTable);		
 			WebElement dpTitle = dpTable.findElement(By.className("ui-datepicker-title"));
 			WebElement dpFromMonth = dpTitle.findElement(By.className("ui-datepicker-month"));
 			WebElement dpFromYear = dpTitle.findElement(By.className("ui-datepicker-year"));			
@@ -97,24 +74,28 @@ public class CommonRepository {
 			while(!dpFromMonth.getText().equals(String.valueOf(expectedMonth)) || !dpFromYear.getText().equals(String.valueOf(expectedYear))) 
 			{
 				System.out.println("Actual Calendar month is " + dpFromMonth.getAttribute("innerText"));
+				if(driver.findElements(byCalendarArrow).size() <1)
+				{
+					break;
+				}
 				//loop clicking arrow
 				calendarArrow = driver.findElement(byCalendarArrow);				
 				calendarArrow.click();
 				
 				//find the whole calendar month and year again, the date picker element is stale / reset
-				dpTable = driver.findElement(byLeftTable);	
-				dpTitle = dpTable.findElement(By.className("ui-datepicker-title"));
-				dpFromYear = dpTitle.findElement(By.className("ui-datepicker-year"));
-				dpFromMonth = dpTitle.findElement(By.className("ui-datepicker-month"));		 
-			}  
+//				dpTable = driver.findElement(byLeftTable);	
+//				dpTitle = dpTable.findElement(By.className("ui-datepicker-title"));
+//				dpFromYear = dpTitle.findElement(By.className("ui-datepicker-year"));
+//				dpFromMonth = dpTitle.findElement(By.className("ui-datepicker-month"));		 
+			} 			
 			
-			if(!dpFromMonth.getText().equals(String.valueOf(expectedMonth)))
+			if(!dpFromMonth.getText().equals(expectedMonth))
 			{
-				
+				byCalendarBody = By.cssSelector("div[class='ui-datepicker-group ui-datepicker-group-last'] >  table[class='ui-datepicker-calendar'] > tbody");	
 			}
 			
+			System.out.println("expect day no value of "  + expectedDay); 
 			
-			// click to select the date
 			WebElement calendarBody = driver.findElement(byCalendarBody);		
 			
 			List<WebElement> rowToBeSelected = calendarBody.findElements(By.tagName("tr"));
@@ -126,7 +107,7 @@ public class CommonRepository {
 			for (WebElement temp : rowToBeSelected) {    // 5 rows
 				days = temp.findElements(By.tagName("a"));
 				for (WebElement temp2 : days) {          // day within rows
-					 if(temp2.getText().equals(String.valueOf(expectedDay))) 
+					 if(temp2.getText().equals(expectedDay)) 
 					 {
 						 dayTobeClicked = temp2;
 						 i = 1;
@@ -136,38 +117,15 @@ public class CommonRepository {
 				if(i == 1)
 					break;
 			}
+			
 			dayTobeClicked.click();		
 		}
 		catch(Exception e)
 		{
 			System.out.println(e); 
 		}
-	}
-	
-	private Boolean IsTheDateInCurrentYear(String expectDate) throws ParseException
-	{
-		Calendar c = ParseDate(expectDate);
-		int expectYear = c.get(Calendar.YEAR);
-		int year = Calendar.getInstance().get(Calendar.YEAR);
-		if (expectYear == year)
-			return true;
-		else
-			return false;
-	}
-	
-	private Boolean IsTheDateInCurrentMonth(String expectDate) throws ParseException
-	{
-		Calendar c = ParseDate(expectDate);
-		int expectMonth = c.get(Calendar.MONTH) + 1;
-		int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
-		System.out.println("expect month "  + expectMonth); 
-		System.out.println("month "  + month); 
-		if (expectMonth == month)
-			return true;
-		else
-			return false;
-	}
-	
+	}	
+		
 	private Calendar ParseDate(String date) throws ParseException
 	{
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");			
@@ -180,8 +138,7 @@ public class CommonRepository {
 	private String GetDayFromDate(String date) throws ParseException
 	{
 		Calendar c = ParseDate(date);
-		return String.valueOf(c.get(Calendar.DATE));
-		
+		return String.valueOf(c.get(Calendar.DATE));		
 	}
 	
 	private String GetMonthFromDate(String date) throws ParseException
